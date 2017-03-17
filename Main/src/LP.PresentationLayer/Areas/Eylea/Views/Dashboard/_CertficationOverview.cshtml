@@ -1,0 +1,25 @@
+﻿@model LP.Model.ViewModels.Dashboards.CertificationOverviewViewModel
+
+<h3 class="section-title alt">@Model.NumberOfUsersRegisteredTranslatedItem.TranslatedValue</h3>
+
+    <ul class="bars-wrap">
+        <li class="bars-item-wrap clearfix item1">
+            <div class="bar bar1 fl"></div>
+            <div class="percentage-value fl">@Model.NumberOfUsersRegistered</div>
+        </li>
+    </ul>
+<ul>
+    @foreach (var dashboardBarChartViewModel in Model.DashboardBarChartViewModels)
+    {
+        Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/_DashboardBarChart.cshtml", dashboardBarChartViewModel);
+    }
+</ul>
+
+<script type="text/javascript">
+    if ($('.percentage-value').html() == '0') {
+        $('.bars-item-wrap .bar1').css('width', '0%')
+    } else {
+        $('.bars-item-wrap .bar1').css('width', '92%')
+    }
+    
+</script>

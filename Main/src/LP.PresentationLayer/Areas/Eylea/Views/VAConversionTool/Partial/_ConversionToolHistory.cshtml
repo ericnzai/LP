@@ -1,0 +1,33 @@
+﻿@model LP.Model.ViewModels.VAConversionTool.ConversionToolHistoryViewModel
+
+<div class="tab-panel">
+    <div id="tabConversionToolHistory">
+        <ul class="clearfix">
+            <li id="tabHistory" class="k-state-active">
+                History
+            </li>
+        </ul>
+        <div class="accordion-panel">
+            <ul id="panelbarConversionTool">
+                @{
+                    Html.RenderPartial("~/Areas/Eylea/Views/Shared/Partial/_HistoryListItems.cshtml", Model);
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function() {
+        var panelBar = $("#panelbarConversionTool").kendoPanelBar().data("kendoPanelBar");
+
+        $("#tabConversionToolHistory").kendoTabStrip({
+            animation: {
+                open: {
+                    effects: "fadeIn"
+                }
+            }
+        });
+    });
+</script>

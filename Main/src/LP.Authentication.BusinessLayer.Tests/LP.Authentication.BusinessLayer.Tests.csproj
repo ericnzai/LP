@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C020E1CF-53E3-4902-855E-E5F77C94923C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LP.Authentication.BusinessLayer.Tests</RootNamespace>
+    <AssemblyName>LP.Authentication.BusinessLayer.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Int|AnyCPU'">
+    <OutputPath>bin\Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Int|AnyCPU'">
+    <OutputPath>bin\Eylea_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Qa|AnyCPU'">
+    <OutputPath>bin\Eylea_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Int|AnyCPU'">
+    <OutputPath>bin\Xlr_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Qa|AnyCPU'">
+    <OutputPath>bin\Xlr_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Preview|AnyCPU'">
+    <OutputPath>bin\Eylea_Preview\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Live|AnyCPU'">
+    <OutputPath>bin\Eylea_Live\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExpectedObjects, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpectedObjects.1.1.1\lib\net40\ExpectedObjects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=10.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.2.1402.2112, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.core, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4cb40d35494691ac, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Should, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Should.1.1.20\lib\Should.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SpecsFor, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecsFor.4.5.0\lib\net40\SpecsFor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.0.133\lib\net40\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.AutoMocking.Moq, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.automocking.moq.3.1.0.133\lib\net40\StructureMap.AutoMocking.Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.3.1.0.133\lib\net40\StructureMap.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\RoleCommandsTests\BaseGiven.cs" />
+    <Compile Include="Commands\RoleCommandsTests\GivenGettingFieldOfEmployment.cs" />
+    <Compile Include="Commands\UserCommandsTests\BaseGiven.cs" />
+    <Compile Include="Commands\UserCommandsTests\GivenAuthenticatingAUser.cs" />
+    <Compile Include="Commands\UserCommandsTests\GivenGettingAFilteredUserCount.cs" />
+    <Compile Include="Commands\UserCommandsTests\GivenGettingUserDetails.cs" />
+    <Compile Include="Commands\UserCommandsTests\GivenGettingListOfUsersByTrainerId.cs" />
+    <Compile Include="Commands\UserCommandsTests\GivenGettingUserNameByIdAsync.cs" />
+    <Compile Include="Commands\UserCommandsTests\GivenGettingUserInformationAsync.cs" />
+    <Compile Include="Commands\UserRoleCommandsTests\BaseGiven.cs" />
+    <Compile Include="Commands\UserRoleCommandsTests\GivenCheckingIfAUserIsAdmin.cs" />
+    <Compile Include="Commands\UserRoleCommandsTests\GivenCheckingIfAUserIsATranslator.cs" />
+    <Compile Include="Commands\UserRoleCommandsTests\GivenGettingCultureRolesForUser.cs" />
+    <Compile Include="Commands\UserRoleCommandsTests\GivenGettingRolesForUser.cs" />
+    <Compile Include="Commands\UserRoleCommandsTests\GivenGettingViewableStatusesForUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LP.Api.Shared.Tests\LP.Api.Shared.Tests.csproj">
+      <Project>{B0F4BEF5-A098-4B1F-9317-B3606ED69232}</Project>
+      <Name>LP.Api.Shared.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.Api.Shared\LP.Api.Shared.csproj">
+      <Project>{89afe81e-5cc4-4a81-b75d-543761f3f89f}</Project>
+      <Name>LP.Api.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.Authentication.BusinessLayer\LP.Authentication.BusinessLayer.csproj">
+      <Project>{cd665372-8de6-4609-9fb7-9cc8da31bcb0}</Project>
+      <Name>LP.Authentication.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.Core\LP.Core.csproj">
+      <Project>{39c84118-a0f7-45b9-a21c-c1b7bc73e99f}</Project>
+      <Name>LP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.EntityModels\LP.EntityModels.csproj">
+      <Project>{02966B54-E3BE-4915-8400-A6B1EE91F8C5}</Project>
+      <Name>LP.EntityModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.Model\LP.Model.csproj">
+      <Project>{1745930f-69f3-4e90-944d-1fb86e1f0d53}</Project>
+      <Name>LP.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.ServiceHost.Common.BusinessLayer\LP.ServiceHost.Common.BusinessLayer.csproj">
+      <Project>{cd0c4888-4e51-4034-be01-74842fb9e12b}</Project>
+      <Name>LP.ServiceHost.Common.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.ServiceHost.DataContracts\LP.ServiceHost.DataContracts.csproj">
+      <Project>{0baa830c-582e-4541-8432-455364c18cb9}</Project>
+      <Name>LP.ServiceHost.DataContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

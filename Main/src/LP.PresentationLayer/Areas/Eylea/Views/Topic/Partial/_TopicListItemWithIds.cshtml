@@ -1,0 +1,11 @@
+﻿@model LP.ServiceHost.DataContracts.Common.Content.CategoryTopic
+
+    <li class="@(@Model.IsCategory ? "is-category" : "is-not-category")">
+
+        
+            @if (!Model.IsCategory)
+            {
+                <input type="checkbox" value="@Model.Id" class="filter-topic-checkbox" id="@Model.Name" />
+            }
+            <label for="@Model.Name">@Model.Name</label>
+        </li>

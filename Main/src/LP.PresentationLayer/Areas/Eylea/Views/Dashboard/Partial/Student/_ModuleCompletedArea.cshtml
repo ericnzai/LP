@@ -1,0 +1,19 @@
+﻿@model LP.Model.ViewModels.Dashboards.Student.ModuleCompletedAreaViewModel
+
+<h3 class="box-title">
+    <span class="border-top"></span>
+    <span class="border-bottom"></span>
+    <span class="border-left"></span>
+    <span class="border-right"></span>
+    <span class="ico cup"></span>
+
+    @Model.ModulesCompletedTranslatedItem.TranslatedValue
+</h3>
+<div class="box-body">
+    <ul class="clearfix">
+        @foreach (var modulesComplete in Model.ModulesComplete)
+        {
+            Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/Student/_ModuleComplete.cshtml", modulesComplete);
+        }
+    </ul>
+</div>

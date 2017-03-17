@@ -1,0 +1,13 @@
+﻿@model LP.Model.ViewModels.Dashboards.IndividualCountryPerformanceViewModel
+           
+<tr class="rgRow" id="__0">
+    <td><span>@Model.CountryName</span></td>
+    <td><span>@Model.TotalNumberOfUsers</span></td>
+
+    @foreach (var countryPerformanceCultureViewModels in Model.CountryPerformanceCultureViewModels)
+    {
+        Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/_CountryPerformanceCultureOverview.cshtml", countryPerformanceCultureViewModels);
+    }
+
+</tr>
+

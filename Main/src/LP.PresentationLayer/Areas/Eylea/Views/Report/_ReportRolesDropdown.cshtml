@@ -1,0 +1,10 @@
+﻿@model LP.Model.ViewModels.Reports.ReportsRolesViewModel
+
+<select id="ddlOverviewRoles">
+    @foreach (var role in Model.ReportRoles)
+    {
+        <option value="@role.Id">
+            @role.RoleName
+        </option>
+    }
+</select>

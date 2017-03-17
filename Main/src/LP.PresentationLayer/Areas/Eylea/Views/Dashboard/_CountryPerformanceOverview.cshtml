@@ -1,0 +1,77 @@
+﻿@using Microsoft.Ajax.Utilities
+@model LP.Model.ViewModels.Dashboards.CountryPerformanceViewModel
+
+<div class="report-section">
+
+
+    <input type="button" id="btnExportOverviewGlobal" value="Export to excel">
+
+    <div id="radGrid1" class="RadGrid RadGrid_Default defaultTheme">
+
+        <table class="rgMasterTable" id="" style="width:100%;table-layout:auto;empty-cells:show;">
+            
+            
+                <tr class="last-row">
+                    <th scope="col" class="rgHeader">@Model.CountryTableHeader</th>
+                    <th scope="col" class="rgHeader">@Model.TotalUsersTableHeader</th>
+                    <th scope="col" class="rgHeader">@Model.NumberOfAccessToTableHeader</th>
+                    
+                    @foreach (var performanceGroupTypeViewModel in Model.PerformanceGroupTypeViewModel)
+                    {
+                        Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/_CountryPerformanceGroupTypeHeaderList.cshtml", performanceGroupTypeViewModel);
+                    }
+
+                </tr>
+          
+                
+                @{
+                    var index = 1;
+                }
+
+                @foreach (var individualCountryPerformanceViewModel in Model.IndividualCountryPerformanceViewModels)
+                {
+                    <tr class="@(index % 2 == 0 ? "rgAltRow" : "rgRow")" id="__0">
+                    
+                    
+                        <td><span>@individualCountryPerformanceViewModel.CountryName</span></td>
+                        <td><span>@individualCountryPerformanceViewModel.TotalNumberOfUsers</span></td>
+                        
+                        <td>
+                            @foreach (var countryPerformanceCultureViewModel in individualCountryPerformanceViewModel.CountryPerformanceCultureViewModels)
+                            {
+                                Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/_CountryPerformanceCultureOverview.cshtml", countryPerformanceCultureViewModel);
+                            }
+                        </td>
+                        
+                        @foreach (var performanceGroupTypeViewModel in Model.PerformanceGroupTypeViewModel)
+                        {
+                            
+                           
+                            <td>
+                                @foreach (var countryPerformanceCultureViewModel in individualCountryPerformanceViewModel.CountryPerformanceCultureViewModels)
+                                {
+                                    foreach (var cultureGroupTypePerformanceViewModels in countryPerformanceCultureViewModel.CountryPerformanceGroupViewModels.Where(a => a.GroupTypeId == performanceGroupTypeViewModel.GroupTypeId))
+                                    {
+                                        Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/_CountryPerformanceGroupOverview.cshtml", cultureGroupTypePerformanceViewModels);
+
+                                    }
+                                }
+                            </td>
+                        }
+
+                    </tr>
+                    
+                    index++;
+                }
+         
+
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        $('table.rgMasterTable').on('scroll', function () {
+            $("table.rgMasterTable > *").width($("table.rgMasterTable").width() + $("table.rgMasterTable").scrollLeft());
+        });
+        ExcelReports.init();
+    </script>
+</div>

@@ -1,0 +1,9 @@
+﻿@model LP.Model.ViewModels.Group.GroupsViewModel
+
+<ul>
+    @foreach (var group in Model.Groups)
+    {
+        Html.RenderPartial("~/Areas/Eylea/Views/Group/Partial/_GroupListItemWithIdAndCulture.cshtml", group);
+    }
+</ul>
+

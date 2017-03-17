@@ -1,0 +1,46 @@
+﻿@model LP.Model.ViewModels.VAConversionToolTranslation.VAConversionToolTranslationOriginalViewModel
+
+<div id="originalFile">
+
+    <div class="toolbar-panel">
+
+        <h4 class="toolbar-panel__title">Original content (@Model.CultureDisplayName)</h4>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-1 form__row__label">
+                <label for="txtOriginalFileName">VA Equivalents Tool in @Model.CultureDisplayName: </label>
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-1 form__row__field">
+                <input type="text" id="txtOriginalFileName" disabled="disabled" value="@Model.FileName" />
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-1 form__row__label">
+                @if (!string.IsNullOrEmpty(Model.Content))
+                {
+                    <a href="data:application/pdf;base64, @Model.Content" download="@Model.FileName">Download VA Equivalents Tool file</a>
+                }
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-1 form__row__label">
+                <label for="txtOriginalComment">Comment: </label>
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-1 form__row__field">
+                <textarea type="text" id="txtOriginalComment" disabled="disabled" style="height:70px;">@Model.Comment</textarea>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>

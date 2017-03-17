@@ -1,0 +1,27 @@
+﻿@model LP.Model.ViewModels.Dashboards.Student.TrainingAreaProgressViewModel
+    <span class="section-title">
+        @Model.TrainingAreaName
+    </span>
+    <a href="Training/Default.aspx">(Change module preferences)</a>
+    <span class="title-border"></span>
+    <ul class="units clearfix">
+        
+        @if (Model.GroupProgressViewModels.Any())
+        {
+            foreach (var groupProgressViewModel in Model.GroupProgressViewModels)
+            {
+                Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/Student/_GroupProgress.cshtml", groupProgressViewModel);
+            }
+        }
+        else
+        {
+            <li class="clearfix">
+                <p>
+                    coming soon
+                </p>
+            </li>
+        }
+
+       
+
+       </ul>

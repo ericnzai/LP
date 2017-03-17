@@ -1,0 +1,50 @@
+﻿@model LP.Model.ViewModels.FeatureAttachments.FeatureAttachmentModalViewModel
+
+<style type="text/css">
+    #imageShower-wrap {
+        width: 100%;
+        height: 660px;
+        text-align: left;
+        position: relative;
+    }
+
+    #imageShower-wrap #divImage {
+        text-align:center;
+    }
+    #imageShower-wrap img {
+        max-height: 530px;
+        width:auto;
+        max-width: 90%;
+    }
+    .imgDesc {
+        width: 100%;
+        bottom: 0px;
+        padding: 0 20px;
+    }
+    .imgDesc h2 {
+        margin: 0;
+        font-size: 16px;
+        font-style: italic;
+    }
+    .imgDesc p{
+        margin: 0;
+    }
+    .imgDesc br{
+        display: none;
+    }
+</style>
+
+<div id="imageShower-wrap" style="">
+    <div id="divImage" class="imgLarge">
+        <a href="@Model.FeatureAttachmentPostInformationViewModel.PostUrl">
+            <img src="@Model.ImageUrl">
+        </a>
+    </div>
+    <div class="imgDesc">
+        <p><strong>@Model.Title</strong></p>
+        <h2>@Html.Raw(Model.Description)</h2>
+        <p>@Html.Raw(Model.PopupText)</p>
+        <p>@Model.LinkToTextTranslatedItem.TranslatedValue <a href="@Model.FeatureAttachmentPostInformationViewModel.PostUrl">@Model.FeatureAttachmentPostInformationViewModel.DisplayLink</a></p>
+    </div>
+
+</div>

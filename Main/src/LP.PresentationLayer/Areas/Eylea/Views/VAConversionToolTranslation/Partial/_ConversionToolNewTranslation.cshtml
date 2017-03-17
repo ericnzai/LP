@@ -1,0 +1,131 @@
+﻿@using System.Configuration
+@model LP.Model.ViewModels.VAConversionToolTranslation.VAConversionToolTranslationNewViewModel
+
+
+
+
+    <div class="toolbar-panel">
+
+        <h4 class="toolbar-panel__title">@Model.CultureDisplayName translation</h4>
+
+        <div class="pure-g form__row" id="divLastUpdated">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                <label class="bold-label">Last Updated:</label><label class="normal-label" id="lblLastUpdated"> @Model.LastUpdated by @Model.CreatedByUser </label>
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-1 form__row__label">
+                <label class="bold-label">VA Equivalents Tool in @Model.CultureDisplayName (*.pdf)</label>
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-1 form__row__field">
+                <input name="files" id="txtFileUploadTranslation" type="file" accept=".pdf" />
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-1 form__row__field">
+                <a href="javascript:;" id="ddFileLinkTranslation">Download file</a>
+            </div>
+        </div>
+
+        <div class="pure-g form__row is-submit-row">
+            <div class="pure-u-1 form__row__field">
+                <input type="checkbox" id="chkTranslationComplete" />
+                <label for="chkTranslationComplete">Translation completed</label>
+            </div>
+        </div>
+        <input type='hidden' id="hdFileName" />
+
+        <div class="pure-g form__row is-submit-row">
+            <div class="pure-u-1 form__row__field">
+                <input type="button" id="btnAddVAConversionToolTranslationFile" value="Update" class="btn btn--update fr" />
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+    function onUpload(e) {
+        e.data = { culture: '@Model.Culture' };
+        var file = e.files[0];
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) {
+                alert(file.name + " is too big!");
+                e.preventDefault();
+            } else {
+                $("#hdFileName").val(file.name);
+                $('#btnAddVAConversionToolTranslationFile').show();
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        $('#btnAddVAConversionToolTranslationFile').hide();
+        $("#txtFileUploadTranslation").kendoUpload(
+            {
+                multiple: false,
+                async: {
+                    saveUrl: "@Model.SaveUrl",
+                    autoUpload: true
+                },
+                upload: onUpload,
+            }
+        );
+
+        if ('@Model.Content' != '') {
+            $("#ddFileLinkTranslation").show();
+            $("#divLastUpdated").show();
+            SetDownloadLink("ddFileLinkTranslation", '@Model.Content', '@Model.FileName');
+        } else {
+            $("#ddFileLinkTranslation").hide();
+            $("#divLastUpdated").hide();
+        }
+        if ('@Model.IsTranslationCompleted' == 'True') {
+            $("#chkTranslationComplete").prop('checked', true);
+        }
+        else {
+            $("#chkTranslationComplete").prop('checked', false);
+        }
+    });
+
+    var urlAddConversionToolFile = '@ConfigurationManager.AppSettings["BaseUrl"]/Eylea/VAConversionToolTranslation/SaveConversionToolFile';
+
+    function SaveFile() {
+        $.ajax({
+            url: urlAddConversionToolFile,
+            type: 'POST',
+            data: "{'fileName':'" + $('#hdFileName').val() + "', 'comment':'', culture:'@Model.Culture', isTranslationCompleted:'" + $('#chkTranslationComplete').prop('checked') + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                if (data.FileName && data.Content) {
+                    $("#ddFileLinkTranslation").show();
+
+                    SetDownloadLink("ddFileLinkTranslation", data.Content, data.FileName);
+
+                    setDownloadLink();
+                }
+
+                if (data.History) {
+                    $('#panelbarConversionTool').html(data.History);
+                    $("#panelbarConversionTool").kendoPanelBar();
+                }
+
+                $("#divLastUpdated").show();
+                $('#lblLastUpdated').html(data.LastUpdatedDateString + ' ' + data.LastUpdatedTimeString + ' by ' + data.CreatedByUser);
+
+                $('#btnAddVAConversionToolTranslationFile').hide();
+            },
+            error: function (err) {
+                $('#btnAddVAConversionToolTranslationFile').show();
+            },
+        });
+    }
+
+</script>
+

@@ -1,0 +1,20 @@
+﻿@using LP.ServiceHost.DataContracts.Enums
+@model LP.Model.ViewModels.Dashboards.Global.GlobalDropdownListsViewModel
+
+<div>
+    <div>
+        @{
+            Html.RenderPartial("~/Areas/Eylea/Views/Shared/Partial/_Dropdown.cshtml", Model.RegionList);
+        }
+    </div>
+    <div>
+        @{
+            Html.RenderPartial("~/Areas/Eylea/Views/Shared/Partial/_Dropdown.cshtml", Model.CountryList);
+        }
+    </div>
+    <div>
+        @{
+            Html.RenderPartial("~/Areas/Eylea/Views/Shared/Partial/_Dropdown.cshtml", Model.UserFunctionList);
+        }
+    </div>
+</div>

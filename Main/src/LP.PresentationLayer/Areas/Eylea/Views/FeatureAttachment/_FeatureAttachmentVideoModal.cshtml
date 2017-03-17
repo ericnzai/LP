@@ -1,0 +1,9 @@
+﻿@model LP.Model.ViewModels.FeatureAttachments.FeatureAttachmentVideoModalViewModel    
+
+@if (!string.IsNullOrEmpty(Model.Title))
+{
+    <h2><strong>@Model.Title</strong></h2>
+}
+
+    <h2>@Html.Raw(Model.Description)</h2>
+    <p>@Model.LinkToTextTranslatedItem.TranslatedValue <a target="_parent" href="@Model.FeatureAttachmentPostInformationViewModel.PostUrl"> @Model.FeatureAttachmentPostInformationViewModel.DisplayLink</a></p>

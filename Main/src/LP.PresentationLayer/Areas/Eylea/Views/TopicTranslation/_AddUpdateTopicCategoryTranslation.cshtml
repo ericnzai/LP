@@ -1,0 +1,80 @@
+﻿@model LP.Model.ViewModels.TopicTranslation.TopicCategoryTranslationFormViewModel
+           
+
+<h3 class="admin-section-title">Topic Category Translation</h3>
+
+<div class="pure-g page-translation">
+    
+    @*global*@
+    <div class="pure-u-lg-12-24 pure-u-1">
+        
+        <div class="toolbar-panel original-panel">
+            <h4 class="toolbar-panel__title">Original content (@Model.GlobalTopicCategoryTranslation.CultureDisplayName)</h4>
+        </div>
+        
+    </div>
+    
+    @*local*@
+    <div class="pure-u-lg-12-24 pure-u-1">
+        <div class="toolbar-panel translation-panel">
+            <h4 class="toolbar-panel__title">@Model.LocalTopicCategoryTranslation.CultureDisplayName translation</h4>
+            <b>Last updated:</b> @Model.LocalTopicCategoryTranslation.LastUpdated by @Model.LocalTopicCategoryTranslation.UpdatedByUserName
+        </div>
+        
+    </div>
+    
+    @*global*@
+    <div class="pure-u-lg-12-24 pure-u-1">
+
+        <div class="toolbar-panel original-panel">
+            Topic Category Name in Global English:
+            <input type="text" value="@Model.GlobalTopicCategoryTranslation.TopicCategoryName" disabled />
+        </div>
+
+    </div>
+    
+    @*local*@
+    <div class="pure-u-lg-12-24 pure-u-1">
+        <div class="toolbar-panel translation-panel">
+            Topic Category Name in @Model.LocalTopicCategoryTranslation.CultureDisplayName:
+            <input type="text" id="txtTopicCategoryName" value="@Model.LocalTopicCategoryTranslation.TopicCategoryName" />
+        </div>
+
+    </div>
+    
+    @*global*@
+    <div class="pure-u-lg-12-24 pure-u-1">
+
+        <div class="toolbar-panel original-panel">
+
+        </div>
+
+    </div>
+    
+    @*local*@
+    <div class="pure-u-lg-12-24 pure-u-1">
+        <div class="toolbar-panel translation-panel">
+            <div class="form__row">
+                <label>
+                    @if (Model.LocalTopicCategoryTranslation.Status == LP.ServiceHost.DataContracts.Enums.Status.Live)
+                    {
+                        <input id="ckStatus" name="CategoryTranslationStatus" type="checkbox" checked />
+                    }
+                    else
+                    {
+                        <input id="ckStatus" name="CategoryTranslationStatus" type="checkbox" />
+                    }
+                    Translation completed
+                </label>
+            </div>
+            
+            <input type="hidden" id="hiddenIsTranslated" value="@Model.LocalTopicCategoryTranslation.IsTranslated" />
+
+            <input type="button" id="btnAddUpdateTopicCategoryTranslation" value="Update Translation" class="btn btn--update" />
+
+        </div>
+
+    </div>
+
+
+</div>

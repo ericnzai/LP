@@ -1,0 +1,6 @@
+﻿@model LP.Model.ViewModels.VAConversionTool.ConversionToolHistoryViewModel
+
+@foreach (var history in Model.HistoryViewModel)
+{
+    Html.RenderPartial("~/Areas/Eylea/Views/Shared/Partial/_HistoryItem.cshtml", history);
+}

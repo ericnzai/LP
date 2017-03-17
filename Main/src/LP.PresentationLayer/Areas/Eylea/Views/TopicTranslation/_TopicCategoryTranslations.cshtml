@@ -1,0 +1,10 @@
+﻿@model LP.Model.ViewModels.TopicTranslation.CompleteTopicCategoryTranslationViewModel
+           
+<div class="chapter-translation-summary-list-wrapper has-summary-sublist accordion">
+
+    @foreach (var category in Model.TopicCategoryTranslations)
+    {
+        Html.RenderPartial("~/Areas/Eylea/Views/TopicTranslation/Partial/_TopicCategoryTranslationListItem.cshtml", category);
+    }
+
+</div>

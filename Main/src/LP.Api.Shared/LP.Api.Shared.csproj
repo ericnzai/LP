@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89AFE81E-5CC4-4A81-B75D-543761F3F89F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LP.Api.Shared</RootNamespace>
+    <AssemblyName>LP.Api.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Int|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Int\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Int|AnyCPU'">
+    <OutputPath>bin\Eylea_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Qa|AnyCPU'">
+    <OutputPath>bin\Eylea_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Int|AnyCPU'">
+    <OutputPath>bin\Xlr_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Qa|AnyCPU'">
+    <OutputPath>bin\Xlr_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Preview|AnyCPU'">
+    <OutputPath>bin\Eylea_Preview\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Live|AnyCPU'">
+    <OutputPath>bin\Eylea_Live\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ask.Core.Logging">
+      <HintPath>..\..\solution items\Ask.Core.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityModel.1.9.2\lib\net45\IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.NamedScope, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.NamedScope.3.2.0.0\lib\net45-full\Ninject.Extensions.NamedScope.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\AskErrorAttribute.cs" />
+    <Compile Include="Binding\HttpContentBinding.cs" />
+    <Compile Include="Binding\IHttpContentBinding.cs" />
+    <Compile Include="Controllers\SharedBaseApiController.cs" />
+    <Compile Include="Controllers\WhoAmIController.cs" />
+    <Compile Include="Extensions\HttpResponseMessageExtensions.cs" />
+    <Compile Include="Formatters\CustomJwtFormat.cs" />
+    <Compile Include="HttpClient\HttpClientWrapperAsync.cs" />
+    <Compile Include="HttpClient\IHttpClientWrapperAsync.cs" />
+    <Compile Include="Interfaces\Api\IConfigurationProvider.cs" />
+    <Compile Include="Interfaces\Api\ICultureProvider.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Authentication\IAskAuthenticationApiBusiness.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Authentication\IAuthenticationCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Authentication\IRoleCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Authentication\IUserCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Authentication\IUserRoleCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\Commands\IGroupTypeCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\Filters\IPostPermissionFilter.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\Filters\ITrainingGroupPermissionFilter.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\IAskApiBusiness.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\ICacheCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\ICommonCalculatorCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\ICultureCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\IGroupCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\IGroupPermissionCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\IPostCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\ITrainerCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\ITrainingAreaCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\IUrlMapperCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\Providers\IAvailableStatusesProvider.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\Providers\ILastAreasViewedProvider.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Common\Providers\IRoleProvider.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\Filters\IFeatureAttachmentFilter.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IAskContentApiBusiness.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IDropdownFilterCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IFeatureAttachmentCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IGlossaryCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IGlossaryPdfCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\INewsCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IPdfCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IPdfComponents.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IPdfContent.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\ISearchCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\ITopicCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\ITopicTranslationCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IVAConversionToolCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Content\IVAConversionToolTranslationCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\Filters\IFilterAllowedUser.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\Filters\IFilterAllowedGroups.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\Filters\IFilterCertificatesAchieved.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IAskExamsApiBusiness.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IAttemptsCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\ICertificatesAchievedCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IDashboardActivitiesCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IExamCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IGroupCompletionCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\INumberAchievedCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IDashboardDropdownListsCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IOverviewCountryProgressCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IOverviewGroupProgressCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IOverviewReportCommand.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IPercentageCompletionCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Exams\IUserPostViewedCommands.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Translation\IAskTranslationApiBusiness.cs" />
+    <Compile Include="Interfaces\BusinessLayer\Translation\ITranslationCommands.cs" />
+    <Compile Include="Interfaces\Core\Caching\IMemoryCacheWrapper.cs" />
+    <Compile Include="Interfaces\Core\Encryption\IEncryptionHandler.cs" />
+    <Compile Include="Interfaces\Data\IBaseCommands.cs" />
+    <Compile Include="Interfaces\Wrappers\IDirectoryInfoWrapper.cs" />
+    <Compile Include="Interfaces\Wrappers\IFactoryDirectoryInfoWrapper.cs" />
+    <Compile Include="Interfaces\Wrappers\IServerWrapper.cs" />
+    <Compile Include="IoC\ApiSharedNinjectModule.cs" />
+    <Compile Include="Mime\FileTypes.cs" />
+    <Compile Include="Mime\MediaTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ConstantProvider.cs" />
+    <Compile Include="Providers\JwtOptions.cs" />
+    <Compile Include="Providers\OAuthProvider.cs" />
+    <Compile Include="Providers\TranslatedItemResourceSetProvider.cs" />
+    <Compile Include="Providers\TranslationItemIdProvider.cs" />
+    <Compile Include="Providers\UriProvider.cs" />
+    <Compile Include="Requests\IRequestExecutor.cs" />
+    <Compile Include="Requests\RequestExecutor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Interfaces\BusinessLayer\Common\Builders\" />
+    <Folder Include="Interfaces\BusinessLayer\Common\MultiLanguage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LP.EntityModels\LP.EntityModels.csproj">
+      <Project>{02966B54-E3BE-4915-8400-A6B1EE91F8C5}</Project>
+      <Name>LP.EntityModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.Model\LP.Model.csproj">
+      <Project>{1745930f-69f3-4e90-944d-1fb86e1f0d53}</Project>
+      <Name>LP.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.ServiceHost.DataContracts\LP.ServiceHost.DataContracts.csproj">
+      <Project>{0BAA830C-582E-4541-8432-455364C18CB9}</Project>
+      <Name>LP.ServiceHost.DataContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

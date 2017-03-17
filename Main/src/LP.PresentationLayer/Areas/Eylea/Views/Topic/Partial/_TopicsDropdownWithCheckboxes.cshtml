@@ -1,0 +1,126 @@
+﻿
+@model LP.Model.ViewModels.Topic.TopicDropdownWithCheckboxesViewModel
+
+<div class="dropdownSelect">
+    <dl class="dropdownSelect-item is-fixed-width">
+        <dt class="dropdownSelect-itemTop">
+            <a>
+                <span class="hida dropdownSelect-item__header">- - Select topics - -</span>
+                <span class="multiSel"></span>
+            </a>
+        </dt>
+
+        <dd class="dropdownSelect-item">
+            <div class="mutliSelect dropdownSelect-item__body">
+                <ul>
+                    @foreach (var item in Model.Items)
+                    {
+                        <li>
+                            <label for="@item.Id">
+                                @if (item.DisplayCheckbox)
+                                {
+                                    if (item.Checked)
+                                    {
+                                        <input type="checkbox" class="checkbox-topics" name="@item.Id" value="@item.Name" checked />
+                                    }
+                                    else
+                                    {
+                                        <input type="checkbox" class="checkbox-topics" name="@item.Id" value="@item.Name" id="@item.Id" />
+                                    }
+                                }
+
+                                @item.Name
+                            </label>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </dd>
+    </dl>
+</div>
+
+
+
+<script>
+    /*
+    Dropdown with Multiple checkbox select with jQuery - May 27, 2013
+    (c) 2013 @@ElmahdiMahmoud
+    license: http://www.opensource.org/licenses/mit-license.php
+    */
+    $(".dropdownSelect dd ul").hide();
+
+    $(".dropdownSelect dt a").on('click', function () {
+        $(".dropdownSelect dd ul").slideToggle('fast');
+    });
+
+    $(".dropdownSelect dd ul li a").on('click', function () {
+        $(".dropdownSelect dd ul").hide();
+    });
+
+    $("ul li label input").each(function () {
+        $(this).parent().parent().addClass('noHeading');
+     
+    });
+    
+    
+
+    function getSelectedValue(id) {
+        return $("#" + id).find("dt a span.value").html();
+    }
+
+    //$(document).bind('click', function (e) {
+    //    var $clicked = $(e.target);
+    //    if (!$clicked.parents().hasClass("dropdownSelect")) $(".dropdownSelect dd ul").slideToggle('fast');
+    //});
+
+    $('.mutliSelect input[type="checkbox"]').on('click', function () {
+        var title = $(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
+            //title = $(this).val() + ",";
+            title = $(this).val();
+        var titleStr = title;
+        var selectedTopics = $('#hdTopics').val();
+        var name = $(this).attr("name");
+        var ids = name.split("_");
+        if ($('.multiSel').find('span').length > 0) {
+            titleStr = ', ' + titleStr;
+        }
+
+        if ($(this).is(':checked')) {
+            var html = '<span title="' + title + '">' + titleStr + '</span>';
+            $('.multiSel').append(html);
+            $(".hida").hide();
+            $(this).closest('li').addClass('checked');
+            // set hidden field with the value
+            if (ids.length > 0) {
+                selectedTopics += ids[1] + ',';
+            }
+        } else {
+            $('span[title="' + title + '"]').remove();
+            var ret = $(".hida");
+            if ($('.multiSel').text() == "") {
+                ret.show();
+            }
+            $('.dropdownSelect dt a').append(ret);
+            $(this).closest('li').removeClass('checked');
+            if (ids.length > 0) {
+                var topicIds = selectedTopics.split(",");
+                var newTopicIds = new Array();
+                for (var i = 0; i < topicIds; i++) {
+                    if (topicIds[i] != ids[1]) {
+                        newTopicIds.push(topicIds[i]);
+
+                    }
+                }
+                selectedTopics = newTopicIds.join(",");
+            }
+        }
+        $('#hdTopics').val(selectedTopics);
+    });
+
+    //$('.mutliSelect li').on('click', function () {
+
+    //});
+</script>
+
+
+

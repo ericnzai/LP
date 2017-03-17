@@ -1,0 +1,45 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	
+	<PropertyGroup>
+		<Today>$([System.DateTime]::Now.ToString("yyyy.MM.dd_HH-mm"))</Today>
+		<CopyCommand>xcopy /E /I /R /Y</CopyCommand>
+		<CopyCommandZip>xcopy /Y</CopyCommandZip>
+		<RootPathWWW>$(RemoteWWWPath)</RootPathWWW>
+		<UnzipByPowerShell>$(RootPathWWW)\unzip.ps1 "$(RootPathWWW)" "$(AssemblyName).$(Configuration).$(Today).zip" $(RootPathWWW)\$(AssemblyName).$(Configuration)"</UnzipByPowerShell>
+		<VsTestPath>"C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"</VsTestPath>
+		<UnitTestDllPath>"$(WebProjectOutputDir)\..\.."</UnitTestDllPath>
+	</PropertyGroup>
+	
+	<Target Name="ConnectToRemote">
+			<Exec Command='net use  $(RemoteServerIp) /u:$(RemoteUser) $(RemotePassword)'  
+
+							ContinueOnError="false"/>
+				
+	</Target>
+	<Target Name="DisconectRemote">
+		<Exec Command='net use  $(RemoteServerIp) /d'
+
+						ContinueOnError="true" />
+
+	</Target>
+	
+	
+	<Target Name="RemoteCopyOutput" >
+    <CallTarget Targets="DisconectRemote"/>
+		<CallTarget Targets="ConnectToRemote"/>
+			<Exec Command='$(CopyCommand) "$(WebProjectOutputDir)"  "$(RemoteServerIp)\$(RemoteWWWPath)\$(AssemblyName)" '/>
+		<CallTarget Targets="DisconectRemote"/>
+  
+	</Target>
+
+  <Target Name="RemoteCopyZip" >
+		<CallTarget Targets="DisconectRemote"/>
+		<CallTarget Targets="ConnectToRemote"/>
+		<Exec Command='$(CopyCommandZip) "$(WebProjectOutputDir).%(ZipFiles.Group).$(Today).zip" "$(RemoteServerIp)\$(RemoteWWWPath)" '/>
+    <CallTarget Targets="DisconectRemote"/>
+	</Target>
+	
+	<Target Name="RemoteUnZip">					
+		<Exec Command='"$(MSBuildExtensionsPath64)\PsExec.exe" $(RemoteServerIp) PowerShell $(UnzipByPowerShell)'/>	
+	</Target>
+</Project>

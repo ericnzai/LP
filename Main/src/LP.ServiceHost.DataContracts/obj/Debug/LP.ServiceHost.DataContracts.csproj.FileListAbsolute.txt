@@ -1,0 +1,5 @@
+C:\_workspace\ASandK\Bayer_Eylea_LearningPlatform_NET\service\Main\src\LP.ServiceHost.DataContracts\bin\Debug\LP.ServiceHost.DataContracts.dll
+C:\_workspace\ASandK\Bayer_Eylea_LearningPlatform_NET\service\Main\src\LP.ServiceHost.DataContracts\bin\Debug\LP.ServiceHost.DataContracts.pdb
+C:\_workspace\ASandK\Bayer_Eylea_LearningPlatform_NET\service\Main\src\LP.ServiceHost.DataContracts\obj\Debug\LP.ServiceHost.DataContracts.csprojResolveAssemblyReference.cache
+C:\_workspace\ASandK\Bayer_Eylea_LearningPlatform_NET\service\Main\src\LP.ServiceHost.DataContracts\obj\Debug\LP.ServiceHost.DataContracts.dll
+C:\_workspace\ASandK\Bayer_Eylea_LearningPlatform_NET\service\Main\src\LP.ServiceHost.DataContracts\obj\Debug\LP.ServiceHost.DataContracts.pdb

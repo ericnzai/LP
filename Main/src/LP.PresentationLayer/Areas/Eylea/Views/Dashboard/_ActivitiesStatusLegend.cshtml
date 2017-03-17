@@ -1,0 +1,12 @@
+﻿@model LP.Model.ViewModels.Dashboards.CountryTrainerActivitiesLegendViewModel
+
+<ul class="legend-table clearfix">
+    <li class="clearfix">
+        <span class="special">
+            --
+        </span>@Model.Registered
+    </li>
+    <li class="clearfix"><span class="ico book" title="Started"></span>@Model.Started </li>
+    <li class="clearfix"><span class="ico self_ass-started" title="Self-assessment in progress"></span>@Model.InProgress</li>
+    <li class="clearfix"><span class="ico self_ass-passed" title="Certified"></span>@Model.Certified</li>
+</ul>

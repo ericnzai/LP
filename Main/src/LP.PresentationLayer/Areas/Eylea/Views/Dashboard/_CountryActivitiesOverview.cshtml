@@ -1,0 +1,59 @@
+﻿@model LP.Model.ViewModels.Dashboards.Country.CountryActivitiesViewModel
+
+<div class="report-section">
+
+    <div id="radGrid1" class="RadGrid RadGrid_Default defaultTheme">
+
+        <table class="rgMasterTable" id="" style="width:100%;table-layout:auto;empty-cells:show;">
+            
+           
+                <tr class="last-row">
+                    <th scope="col" class="rgHeader">@Model.TraineeTableHeader</th>
+                    <th scope="col" class="rgHeader">@Model.TrainerTableHeader</th>
+                    <th scope="col" class="rgHeader">@Model.LanguageTableHeader</th>
+                    
+                    @foreach (var performanceGroupTypeViewModel in Model.PerformanceGroupTypeViewModel)
+                    {
+                        Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/_CountryPerformanceGroupTypeHeaderList.cshtml", performanceGroupTypeViewModel);
+                    }
+                </tr>
+           
+                
+                @foreach (var countryActivityViewModel in Model.CountryActivityViewModels)
+                {
+                    <tr class="rgRow" id="__0">
+                        <td><span>@countryActivityViewModel.TraineeUserName</span></td>
+                        <td><span>@countryActivityViewModel.TrainerUserName</span></td>
+                        
+                        <td>
+                            @foreach (var traineeActivityLanguageViewModel in countryActivityViewModel.TraineeActivityLanguageViewModels)
+                            {
+                                Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/_TraineeActivityLanguageOverview.cshtml", traineeActivityLanguageViewModel);
+                            }
+                        </td>
+                        
+                        @foreach (var performanceGroupTypeViewModel in Model.PerformanceGroupTypeViewModel)
+                        {
+                           <td>
+                                @foreach (var countryActvityLanguageViewModelViewModel in countryActivityViewModel.TraineeActivityLanguageViewModels)
+                                {
+                                    foreach (var cultureGroupTypePerformanceViewModels in countryActvityLanguageViewModelViewModel.GroupActivityViewModels.Where(a => a.GroupTypeId == performanceGroupTypeViewModel.GroupTypeId))
+                                    {
+                                        Html.RenderPartial("~/Areas/Eylea/Views/Dashboard/Partial/_GroupActivityOverview.cshtml", cultureGroupTypePerformanceViewModels);
+                                    }
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+             
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        $('table.rgMasterTable').on('scroll', function () {
+            $("table.rgMasterTable > *").width($("table.rgMasterTable").width() + $("table.rgMasterTable").scrollLeft());
+        });
+    </script>
+
+</div>

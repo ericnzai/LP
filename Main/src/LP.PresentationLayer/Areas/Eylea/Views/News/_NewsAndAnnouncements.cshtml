@@ -1,0 +1,20 @@
+﻿@model LP.Model.ViewModels.News.NewsViewModel
+<h3 class="news__title bordered-title">
+    @Model.NewsAndAnnouncementsTranslatedItem.TranslatedValue
+    <span class="bordered-title__top"></span>
+    <span class="bordered-title__bottom"></span>
+    <span class="bordered-title__left"></span>
+    <span class="bordered-title__right"></span>
+    <span class="ico antenna bordered-title__ico"></span>
+</h3>
+
+<ul class="news__list">
+    
+    @foreach (var latestNewsItem in Model.LatestNewsItems)
+    {
+        latestNewsItem.ReadMoreTranslatedItem = Model.ReadMoreTranslatedItem;
+
+        Html.RenderPartial("~/Areas/Eylea/Views/News/Partial/_NewsItem.cshtml", latestNewsItem);
+    }
+</ul>
+

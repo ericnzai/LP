@@ -1,0 +1,21 @@
+﻿@model LP.Model.ViewModels.Dashboards.DashboardBarChartViewModel
+          
+<li class="clearfix">
+    <p class="title no-margin-l branded-title">
+        <span class="first">@Model.Title</span><span class="second">@Model.TrainingTranslation</span>
+    </p>
+    <ul class="bars-wrap">
+        <li class="bars-item-wrap clearfix item2">
+            <div class="bar bar2 fl" style="width: @Model.PercentageOfUsersStarted%;"></div>
+            <div style="right: -22px;" class="percentage-value fl">@Model.NumberOfUsersStarted</div>
+        </li>
+        <li class="bars-item-wrap clearfix item3">
+            <div class="bar bar3 fl" style="width: @Model.PercentageOfUsersInProgress%;"></div>
+            <div style="right: -22px;" class="percentage-value fl">@Model.NumberOfUsersInProgress</div>
+        </li>
+        <li class="bars-item-wrap clearfix item4">
+            <div class="bar bar4 fl" style="width: @Model.PercentageOfUsersCertified%;"></div>
+            <div style="right: -22px;" class="percentage-value fl">@Model.NumberOfUsersCertified</div>
+        </li>
+    </ul>
+</li>

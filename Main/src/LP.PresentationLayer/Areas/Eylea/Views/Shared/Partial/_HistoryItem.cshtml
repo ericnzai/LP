@@ -1,0 +1,8 @@
+﻿@model LP.Model.ViewModels.Shared.HistoryViewModel
+
+<li>
+    Updated : [@Model.DateModified.ToShortDateString()], [@Model.DateModified.ToShortTimeString()] by [@Model.CreatedByUser]
+    <ul>
+        <li>@Model.Text</li>
+    </ul>
+</li>

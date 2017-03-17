@@ -1,0 +1,11 @@
+﻿
+@model LP.Model.ViewModels.Shared.DropdownViewModel
+
+<select id="@Model.ClientId">
+    @foreach (var groupType in Model.DropdownItems)
+    {
+        <option value="@groupType.Id">
+            @groupType.Name
+        </option>
+    }
+</select>

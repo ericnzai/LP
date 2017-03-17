@@ -1,0 +1,5 @@
+﻿@model LP.ServiceHost.DataContracts.Common.Content.FeatureAttachment.FeatureAttachmentItemContract
+@using LP.PresentationLayer.Extensions
+@using System.Net
+
+@Html.RenderTemplateInMvcHtmlString(WebUtility.HtmlDecode(Model.Template))

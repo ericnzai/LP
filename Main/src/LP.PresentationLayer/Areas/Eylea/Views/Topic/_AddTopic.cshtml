@@ -1,0 +1,38 @@
+﻿@model LP.Model.ViewModels.Topic.TopicViewModel
+
+<div class="pure-g">
+    <div class="pure-u-1 toolbar-panel">
+
+        <h4 class="toolbar-panel__title">Add topic</h4>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                <label for="txtTopic">Name: </label>
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+                <input type="text" id="txtTopic" name="txtTopic" required />
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                <label for="txtTopic">Select category: </label>
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+                @{
+                    Html.RenderPartial("~/Areas/Eylea/Views/Shared/Partial/_Dropdown.cshtml", Model.TopicCategories);
+                }
+            </div>
+        </div>
+
+        <div class="pure-g form__row is-submit-row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                &nbsp;
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+                <input type="submit" id="btnAddTopic" value="Add" class="btn btn--update" />
+            </div>
+        </div>
+
+    </div>
+</div>

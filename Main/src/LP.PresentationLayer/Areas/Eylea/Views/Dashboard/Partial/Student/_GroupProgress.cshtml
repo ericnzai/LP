@@ -1,0 +1,83 @@
+﻿@using LP.ServiceHost.DataContracts.Enums
+@model LP.Model.ViewModels.Dashboards.Student.GroupProgressViewModel
+
+    <div class="training-module" data-id="@Model.GroupId">
+        <div class="training-module__head">
+            <div class="container-fluid">
+                <div class="clearfix">
+                    <ul class="training-box-status-list fl">
+                        <li>
+                            <span class="cultureFlag flag-30 @Model.Culture"></span>
+                            <a href="@Model.GroupUrl">
+                                <span class="training-module__culture-label">@Model.LanguageName</span>
+                                <span class="training-module__head__title branded-title">
+                                    @Model.GroupName
+                                </span>
+                            </a>
+                        </li>
+                        @if (Model.IsCertificationComplete)
+                        {
+                            <li class="training-box-status-list__item">
+                                <span class="training-box-status-ico ico certification-completed-ico"></span>
+                            </li>
+                        }
+                        else if (Model.WasCertified)
+                        {
+                            <li class="training-box-status-list__item">
+                                <span class="training-box-status-ico ico new-content-ico"></span>
+                            </li>
+                        }
+                        
+
+                    </ul>
+                </div>
+
+                <p class="training-module__qty">This module consists of <span class="chapter-no">@Model.NumberOfChapters</span> chapters</p>
+                @if (Model.GroupStatus == Status.ComingSoon)
+                {
+                    <div class="c-soon-module">
+                        <div class="ribbon fr rtl"></div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                }
+                
+            </div>
+
+            <div class="container-fluid">
+                <div>
+                    <div class="training-module__body">
+                        <div class="row">
+                            <div class="col-xs-3 col-md-3">
+  
+                                @Html.Partial("~/Areas/Eylea/Views/Shared/Partial/_PieChartWrap.cshtml", Model.PieChartViewModel)
+                            </div>
+                            <div class="col-xs-9 col-md-9">
+                                @if (Model.IsCertificationComplete)
+                                {
+                                    <div class="moduleInfo">
+                                        <h4 class="training-module__title">You have completed this training</h4>
+                                    </div>
+                                    
+                                }
+                                else
+                                {
+                                    <div class="moduleInfo">
+                                        <h3 class="training-module__title-label">Current chapter:</h3>
+                                        <h4 class="training-module__title">@Model.CurrentChapter</h4>
+                                    </div>
+                                    
+                                }
+                                
+                                <a class="btn flex uppCase" href="@Model.ChapterUrl">
+                                    <span>@Model.ChapterProgressButtonText</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

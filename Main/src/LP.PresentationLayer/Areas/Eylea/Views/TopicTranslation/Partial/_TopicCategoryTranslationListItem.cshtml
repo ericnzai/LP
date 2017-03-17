@@ -1,0 +1,84 @@
+﻿@model LP.Model.ViewModels.TopicTranslation.TopicCategoryTranslationViewModel
+           
+
+<div class="chapter-translation-summary accordion__item" id="ct@Model.Id">
+    
+    <div class="pure-g chapter-translation-summary__head is-table accordion__head">
+        <div class="chapter-translation-summary__status is-table-cell--align-middle pure-u-md-1-24 pure-u-1">
+            @if (Model.IsTranslated)
+            {
+                <div class="ico translation-ico done"></div>
+            }
+            else
+            {
+                <div class="ico translation-ico"></div>
+            }
+        </div>
+        <div class="chapter-translation-summary__details is-table-cell--align-middle pure-u-md-22-24 pure-u-1">
+            <h5 class="chapter-translation-summary__subtitle">@Model.TopicCategoryName</h5>
+        </div>
+        <div class="chapter-translation-summary__controls is-table-cell--align-middle pure-u-md-1-24 pure-u-1">
+            <span class="ico branded-accordion-arrow chapter-translation-summary__controls__arrow"></span>
+        </div>
+    </div>
+    
+    <div class="chapter-translation-summary__body accordion__body">
+
+        <div class="chapter-translation-summary__body__section">
+            <h6 class="chapter-translation-summary__body__section__title">Topic Category:</h6>
+            <div class="pure-g chapter-translation-summary__sublist-item is-section-heading is-table">
+                <div class="chapter-translation-summary__status is-table-cell--align-middle pure-u-md-1-24 pure-u-1">
+                    @if (Model.IsTranslated)
+                    {
+                        <div class="ico translation-ico done"></div>
+                    }
+                    else
+                    {
+                        <div class="ico translation-ico"></div>
+                    }
+                </div>
+                <div class="chapter-translation-summary__actions is-table-cell--align-middle pure-u-md-4-24 pure-u-1">
+                    <ul class="btn-group btn-group--vertical is-fixed-width">
+                        <li class="btn-group__item">
+
+                            @if (Model.IsTranslated)
+                            {
+                                <a href="TopicCategoryTranslationForm.aspx?tc=@Model.TopicCategoryId" class="btn btn--update chapter-translation-summary__btn" title="Topic Category Translation">
+                                    Edit
+                                </a>
+
+                            }
+                            else
+                            {
+                                <a href="TopicCategoryTranslationForm.aspx?tc=@Model.TopicCategoryId" class="btn btn--update chapter-translation-summary__btn btn--alt">
+                                    Start Translation
+                                </a>
+                            }
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="chapter-translation-summary__details is-table-cell--align-middle pure-u-md-12-24 pure-u-1">
+                    <p>
+                        <span class="ico ico-type-section chapter-translation-summary__type-icon">
+                        </span>
+                        <span class="nottranslated">@Model.TopicCategoryName</span>
+                    </p>
+                </div>
+                <div class="chapter-translation-summary__log is-table-cell--align-middle pure-u-md-7-24 pure-u-1">
+                    Last updated on @Model.LastUpdated by @Model.UpdatedByUserName
+                </div>
+            </div>
+        </div>
+        
+        <div class="chapter-translation-summary__body__section">
+            <h6 class="chapter-translation-summary__body__section__title">Topics:</h6>
+            @foreach (var topic in Model.TopicTranslations)
+            {
+                Html.RenderPartial("~/Areas/Eylea/Views/TopicTranslation/Partial/_TopicTranslationListItem.cshtml", topic);
+            }
+        </div>
+
+    </div>
+    
+</div>

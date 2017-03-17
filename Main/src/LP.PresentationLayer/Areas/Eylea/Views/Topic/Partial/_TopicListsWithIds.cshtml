@@ -1,0 +1,8 @@
+﻿@model LP.Model.ViewModels.Topic.CategoryTopicsViewModel
+
+<ul>
+    @foreach (var item in Model.Items)
+    {
+        Html.RenderPartial("~/Areas/Eylea/Views/Topic/Partial/_TopicListItemWithIds.cshtml", item);
+    }
+</ul>

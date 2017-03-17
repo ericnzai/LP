@@ -1,0 +1,31 @@
+﻿@model LP.Model.ViewModels.Common.CultureMenuViewModel
+
+<div class="cajax__tab_panel">
+
+    Available in:
+
+    @foreach (var culture in Model.AvailableCultures)
+    {
+        <input type="hidden" id="hCulture" value="@culture.Key" />
+        <input type="hidden" id="hCultureDisplayName" value="@culture.Value" />
+
+        <div class="ajax__tab_header">
+            <span class="ajax__tab_outer">
+                <span class="ajax__tab_inner">
+                    <a class="ajax__tab_tab" href="#" id="@culture.Key">
+                        <span>@culture.Value</span>
+                    </a>
+                </span>
+            </span>
+        </div>
+
+        <div class="ajax__tab_body ajax__scroll_none">
+            <div class="ajax__tab_panel">
+                <div id="topicTranslations" data-url="/Eylea/TopicTranslation/GetAllTopicCategoriesByCulture/@culture.Key" data-is-ajaxed="true">
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>

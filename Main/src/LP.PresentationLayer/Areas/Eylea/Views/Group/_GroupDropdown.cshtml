@@ -1,0 +1,10 @@
+﻿@model LP.Model.ViewModels.Group.GroupsViewModel
+
+<select id="ddlgroupTypes">
+    @foreach (var groupType in Model.Groups)
+    {
+        <option value="@groupType.Id">
+            @groupType.Name
+        </option>
+    }
+</select>

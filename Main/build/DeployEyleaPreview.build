@@ -1,0 +1,13 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+  <RemoteWWWPath>d$\_webroot\preview.eyleatraining.com\releases\api</RemoteWWWPath>
+  <RemoteServerIp>\\preview.eyleatraining.com</RemoteServerIp>
+		<RemoteUser>askdev\askadmin</RemoteUser>
+		<RemotePassword>P!nkparr0t</RemotePassword>
+	</PropertyGroup>
+
+	<Target Name="DeployEyleaPreview">
+		<CallTarget Targets="CreateZip"/>
+		<CallTarget Targets="RemoteCopyZip"/>
+	</Target>
+</Project>

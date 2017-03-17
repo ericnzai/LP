@@ -1,0 +1,123 @@
+﻿@using LP.Api.Shared.Providers
+@model LP.Model.ViewModels.VAConversionTool.VAConversionToolViewModel
+
+<div class="pure-g">
+    <div class="pure-u-1 toolbar-panel">
+
+        <h4 class="toolbar-panel__title">Add VA Equivalents Tool</h4>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                <label for="txtCulture">Culture: </label>
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+                <label id="txtCulture" value="@ConstantProvider.GlobalCulture">@Model.CultureDisplayName</label>
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                <label for="txtFileName">File name: </label>
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+                <input type="text" id="txtFileName" value="@Model.FileName" readonly />
+
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+                    <a href="javascript:;" id="ddFileLink">Download file</a>
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                <label for="txtFileUpload">File Upload: </label>
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+                <input name="files" id="txtFileUpload" type="file" accept=".pdf" />
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+                <label id="txtFileSize">File format supported .pdf Max size 5mb</label>
+            </div>
+        </div>
+
+        <div class="pure-g form__row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                <label for="txtComment">Comment: </label>
+            </div>
+            <div class="pure-u-sm-16-24 pure-u-1 form__row__field">
+
+                <textarea id="txtComment" rows="10" cols="30" style="height:440px" value="@Model.Comment"></textarea>
+            </div>
+        </div>
+
+        <div class="pure-g form__row is-submit-row">
+            <div class="pure-u-sm-8-24 pure-u-1 form__row__label">
+                &nbsp;
+            </div>
+            <div class="pure-u-1 form__row__field">
+                <input type="button" id="btnAddVAConversionToolFile" value="Update" class="btn btn--update fr" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("~/Areas/Eylea/Views/VAConversionTool/Partial/_ConversionToolHistory.cshtml", Model.ConversionToolHistoryViewModel);
+}
+<script>
+    function onUpload(e) {
+        var file = e.files[0];
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) {
+                alert(file.name + " is too big!");
+                e.preventDefault();
+            } else {
+                $('#btnAddVAConversionToolFile').show();
+                $("#txtFileName").val(file.name);
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        $('#btnAddVAConversionToolFile').hide();
+        // if there is already a file saved then display link otherwise hide it
+        if ('@Model.Content' == '') {
+            $("#ddFileLink").hide();
+        }else{
+            $("#ddFileLink").show();
+
+            SetDownloadLink("ddFileLink", '@Model.Content', '@Model.FileName');
+        }
+
+        // create Editor from textarea HTML element with default set of tools
+        $("#txtComment").kendoEditor({
+            resizable: {
+                content: true,
+                toolbar: true
+            }
+        });
+
+        $("#txtFileUpload").kendoUpload(
+            {
+                multiple: false,
+                async: {
+                    saveUrl: "@Model.SaveUrl",
+                    autoUpload: true
+                },
+                upload: onUpload
+            }
+        );
+    });
+</script>

@@ -1,0 +1,28 @@
+ <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<Import Project="remoteCopy.build" />
+<Import Project="zipUnZip.build" />
+<Import Project="configTransform.build" />
+<Import Project="DeployEyleaInt.build" Condition="'$(DeployEyleaInt)'=='true'" />
+<Import Project="DeployEyleaQa.build" Condition="'$(DeployEyleaQa)'=='true'" />
+<Import Project="DeployEyleaPreview.build" Condition="'$(DeployEyleaPreview)'=='true'" />
+<Import Project="DeployEyleaLive.build" Condition="'$(DeployEyleaLive)'=='true'" />
+<Import Project="DeployXlrInt.build" Condition="'$(DeployXlrInt)'=='true'" />
+<Import Project="DeployXlrQa.build" Condition="'$(DeployXlrQa)'=='true'" />
+<Import Project="DeployXlrPreview.build" Condition="'$(DeployXlrPreview)'=='true'" />
+<Import Project="DeployXlrLive.build" Condition="'$(DeployXlrLive)'=='true'" />
+ 
+ <Target Name="Deploy">
+	<CallTarget Targets="TransformConfigFiles" Condition="'$(TransformConfigFiles)'=='true'"></CallTarget>
+  <CallTarget Targets="DeployEyleaInt" Condition="'$(DeployEyleaInt)'=='true'"></CallTarget>
+	<CallTarget Targets="DeployEyleaQa" Condition="'$(DeployEyleaQa)'=='true'"></CallTarget>
+	<CallTarget Targets="DeployEyleaPreview" Condition="'$(DeployEyleaPreview)'=='true'"></CallTarget>
+	<CallTarget Targets="DeployEyleaLive" Condition="'$(DeployEyleaLive)'=='true'"></CallTarget>
+  <CallTarget Targets="DeployXlrInt" Condition="'$(DeployXlrInt)'=='true'"></CallTarget>
+  <CallTarget Targets="DeployXlrQa" Condition="'$(DeployXlrQa)'=='true'"></CallTarget>
+  <CallTarget Targets="DeployXlrPreview" Condition="'$(DeployXlrPreview)'=='true'"></CallTarget>
+  <CallTarget Targets="DeployXlrLive" Condition="'$(DeployXlrLive)'=='true'"></CallTarget>
+ </Target>
+ 
+ </Project>
+ 

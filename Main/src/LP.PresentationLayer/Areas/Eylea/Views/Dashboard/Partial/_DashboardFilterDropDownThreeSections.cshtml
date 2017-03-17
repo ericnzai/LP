@@ -1,0 +1,10 @@
+﻿@model LP.Model.ViewModels.Shared.DropdownViewModel
+
+<select id="@Model.ClientId" class="fl updatePanelGraphs__selectBox box-1-3">
+    @foreach (var groupType in Model.DropdownItems)
+    {
+        <option value="@groupType.Id">
+            @groupType.Name
+        </option>
+    }
+</select>

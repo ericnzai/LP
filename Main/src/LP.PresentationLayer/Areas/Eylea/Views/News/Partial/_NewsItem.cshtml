@@ -1,0 +1,14 @@
+﻿@model LP.ServiceHost.DataContracts.Common.Content.LatestNewsItem
+<li class="news__list__item">
+    <div class="news__list__text">
+        <p class="">
+            <span>
+                @Model.Content
+            </span>
+        </p>
+    </div>
+    <div class="news__list__date-posted-wrapper p-rel">
+        <span class="news__list__date-posted">Posted: @Model.Date</span>
+        <a title="@Model.ReadMoreTranslatedItem.TranslatedValue" class="news__list__read-more" href="@Model.ReadMoreUrl">@Model.ReadMoreTranslatedItem.TranslatedValue</a>
+    </div>
+</li>

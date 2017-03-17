@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83829740-99C8-44C1-A9D3-563D397AE009}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LP.PresentationLayer</RootNamespace>
+    <AssemblyName>LP.PresentationLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ask.Core.Logging">
+      <HintPath>..\..\solution items\Ask.Core.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JWT, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JWT.1.3.4\lib\3.5\JWT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Eylea\Controllers\Dashboards\CertificationOverviewController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\Dashboards\CountryPerformanceController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\CultureMenuController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\Dashboards\DashboardFilterController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\Dashboards\CountryTrainerActivitiesController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\FeatureAttachmentController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\GlossaryController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\GlossaryPdfController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\GroupController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\ReportController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\SearchController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\TopicController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\TopicTranslationController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\UserController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\VAConversionToolController.cs" />
+    <Compile Include="Areas\Eylea\Controllers\VAConversionToolTranslationController.cs" />
+    <Compile Include="Areas\Eylea\EyleaAreaRegistration.cs" />
+    <Compile Include="Areas\Xarelto\XareltoAreaRegistration.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\WhoAmIController.cs" />
+    <Compile Include="Extensions\HtmlStringExtensions.cs" />
+    <Compile Include="Filters\AllowCrossSiteJsonAttribute.cs" />
+    <Compile Include="Filters\CultureAttribute.cs" />
+    <Compile Include="Filters\JwtAuthorizeAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IoC\PresentationLayerNinjectModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\OAuthRequestProvider.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Wrappers\DirectoryInfoWrapper.cs" />
+    <Compile Include="Wrappers\FactoryDirectoryInfoWrapper.cs" />
+    <Compile Include="Wrappers\ServerWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Eylea\Views\web.config" />
+    <Content Include="Areas\Xarelto\Views\web.config" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\Student\_ModuleComplete.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\Student\_ModuleCompletedArea.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_UserInformation.cshtml" />
+    <Content Include="Areas\Eylea\Views\News\_NewsAndAnnouncements.cshtml" />
+    <Content Include="Areas\Eylea\Views\News\Partial\_NewsItem.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\Student\_MyTrainingTitle.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\Student\_TrainingAreaProgress.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\Student\_GroupProgress.cshtml" />
+    <Content Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Eylea\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Eylea\Views\Shared\_Layout.cshtml" />
+    <Content Include="ConnectionStrings.Debug.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="ConnectionStrings.Release.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="ConnectionStrings.Int.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="ConnectionStrings.Eylea_Int.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="ConnectionStrings.Eylea_Qa.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="ConnectionStrings.Xlr_Int.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="ConnectionStrings.Xlr_Qa.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\Eylea\Views\Group\_GroupLists.cshtml" />
+    <Content Include="Areas\Eylea\Views\Group\Partial\_GroupListItem.cshtml" />
+    <Content Include="Areas\Eylea\Views\Group\_GroupDropdown.cshtml" />
+    <Content Include="Areas\Eylea\Views\Group\Partial\_GroupListItemWithIds.cshtml" />
+    <Content Include="Areas\Eylea\Views\Group\_GroupListsWithIds.cshtml" />
+    <Content Include="Areas\Eylea\Views\Topic\_AddTopic.cshtml" />
+    <Content Include="ConnectionStrings.Eylea_Preview.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="ConnectionStrings.Eylea_Live.config">
+      <DependentUpon>ConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\Eylea\Views\Dashboard\_CountryPerformanceOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\FeatureAttachment\_FeatureAttachmentModal.cshtml" />
+    <Content Include="Areas\Eylea\Views\FeatureAttachment\_FeatureAttachmentVideoModal.cshtml" />
+    <Content Include="Areas\Eylea\Views\TopicTranslation\Partial\_TopicTranslationListItem.cshtml" />
+    <Content Include="Areas\Eylea\Views\TopicTranslation\Partial\_TopicCategoryTranslationListItem.cshtml" />
+    <Content Include="Areas\Eylea\Views\TopicTranslation\_TopicCategoryTranslations.cshtml" />
+    <Content Include="Areas\Eylea\Views\Topic\Partial\_TopicsDropdownWithCheckboxes.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Eylea\Views\Topic\Partial\_TopicListsWithIds.cshtml" />
+    <Content Include="Areas\Eylea\Views\Topic\Partial\_TopicListItemWithIds.cshtml" />
+    <Content Include="Areas\Eylea\Views\Topic\Partial\_PostTopicsList.cshtml" />
+    <Content Include="Areas\Eylea\Views\TopicTranslation\_AddUpdateTopicCategoryTranslation.cshtml" />
+    <Content Include="Areas\Eylea\Views\TopicTranslation\_AddUpdateTopicTranslation.cshtml" />
+    <Content Include="Areas\Eylea\Views\TopicTranslation\_TopicTranslationAvailableCultures.cshtml" />
+    <Content Include="Areas\Eylea\Views\VAConversionTool\_AddConversionToolPdfFile.cshtml" />
+    <Content Include="Areas\Eylea\Views\VAConversionToolTranslation\_ConversionToolTranslationView.cshtml" />
+    <Content Include="Areas\Eylea\Views\VAConversionTool\Partial\_ConversionToolHistory.cshtml" />
+    <Content Include="Areas\Eylea\Views\Shared\Partial\_HistoryItem.cshtml" />
+    <Content Include="Areas\Eylea\Views\Shared\Partial\_HistoryListItems.cshtml" />
+    <Content Include="Areas\Eylea\Views\VAConversionToolTranslation\Partial\_ConversionToolOriginalTranslation.cshtml" />
+    <Content Include="Areas\Eylea\Views\VAConversionToolTranslation\Partial\_ConversionToolNewTranslation.cshtml" />
+    <Content Include="Areas\Eylea\Views\Shared\Partial\_LanguageSelector.cshtml" />
+    <Content Include="Areas\Eylea\Views\Shared\Partial\_Language.cshtml" />
+    <Content Include="Areas\Eylea\Views\VAConversionToolTranslation\Partial\_ConversionToolNewTranslationWithHistory.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_DashboardBarChart.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_DashboardBarChartLegend.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\_CertficationOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_CountryPerformanceCultureOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_CountryPerformanceGroupOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_CountryPerformanceGroupTypeHeaderList.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_CountryPerformanceSingleOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\Shared\Partial\_PieChartWrap.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\_TrainerActivitiesOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_DashboardSectionTitleWithInfoIcon.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_DashboardFilterDropDownThreeSections.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_DashboardFilterDropDownTwoSections.cshtml" />
+    <Content Include="Areas\Eylea\Views\FeatureAttachment\_FeatureAttachmentsList.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\_ActivitiesStatusLegend.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_CountryTrainerActivitiesTitleWithInfoIcon.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_CountryTrainerViewReportLink.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\_CountryActivitiesOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_GroupActivityOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\Dashboard\Partial\_TraineeActivityLanguageOverview.cshtml" />
+    <Content Include="Areas\Eylea\Views\Report\_ReportRolesDropdown.cshtml" />
+    <Content Include="Areas\Eylea\Views\FeatureAttachment\_FeatureAttachmentItem.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\WhoAmI\Index.cshtml" />
+    <Content Include="Views\Shared\Partial\_SingleTranslatedItem.cshtml" />
+    <Content Include="Areas\Eylea\Views\Shared\Partial\_Dropdown.cshtml" />
+    <None Include="Web.Eylea_Int.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Eylea_Live.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Eylea_Preview.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Eylea_Qa.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Int.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Xlr_Int.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Xlr_Qa.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Eylea\Models\" />
+    <Folder Include="Areas\Eylea\Views\CertificationOverview\" />
+    <Folder Include="Areas\Eylea\Views\CountryPerformance\" />
+    <Folder Include="Areas\Eylea\Views\DashboardFilter\" />
+    <Folder Include="Areas\Eylea\Views\GlossaryPdf\" />
+    <Folder Include="Areas\Eylea\Views\Search\" />
+    <Folder Include="Areas\Eylea\Views\TrainerActivities\" />
+    <Folder Include="Areas\Eylea\Views\User\" />
+    <Folder Include="Areas\Xarelto\Controllers\" />
+    <Folder Include="Areas\Xarelto\Models\" />
+    <Folder Include="Areas\Xarelto\Views\Shared\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LP.Api.Shared\LP.Api.Shared.csproj">
+      <Project>{89AFE81E-5CC4-4A81-B75D-543761F3F89F}</Project>
+      <Name>LP.Api.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.Data\LP.Data.csproj">
+      <Project>{1FAB0F7B-21AD-4AEB-9D89-FA16CEE200AE}</Project>
+      <Name>LP.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.EntityModels\LP.EntityModels.csproj">
+      <Project>{02966b54-e3be-4915-8400-a6b1ee91f8c5}</Project>
+      <Name>LP.EntityModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.Model\LP.Model.csproj">
+      <Project>{1745930F-69F3-4E90-944D-1FB86E1F0D53}</Project>
+      <Name>LP.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.ServiceHost.DataContracts\LP.ServiceHost.DataContracts.csproj">
+      <Project>{0BAA830C-582E-4541-8432-455364C18CB9}</Project>
+      <Name>LP.ServiceHost.DataContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Int|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Int|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Qa|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Int|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Qa|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Preview|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Live|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52922</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/LP.PresentationLayer</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Import Project="..\..\build\Deploy.build" />
+  <Target Name="AfterBuild">
+    <CallTarget Targets="Deploy" />
+  </Target>
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="AfterCompile" Condition="Exists('ConnectionStrings.$(Configuration).config')">
+    <!--Generate transformed app config in the intermediate directory-->
+    <TransformXml Source="ConnectionStrings.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="ConnectionStrings.$(Configuration).config" />
+    <!--Force build process to use the transformed configuration file from now on.-->
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="ConnectionStrings.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+  <!--Override After Publish to support ClickOnce AfterPublish. Target replaces the untransformed config file copied to the deployment directory with the transformed one.-->
+  <Target Name="AfterPublish">
+    <PropertyGroup>
+      <DeployedConfig>$(_DeploymentApplicationDir)$(TargetName)$(TargetExt).config$(_DeploymentFileMappingExtension)</DeployedConfig>
+    </PropertyGroup>
+    <!--Publish copies the untransformed App.config to deployment directory so overwrite it-->
+    <Copy Condition="Exists('$(DeployedConfig)')" SourceFiles="$(IntermediateOutputPath)$(TargetFileName).config" DestinationFiles="$(DeployedConfig)" />
+  </Target>
+  <Target Name="AfterCompile" Condition="Exists('Web.$(Configuration).config')">
+    <!--Generate transformed app config in the intermediate directory-->
+    <TransformXml Source="Web.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="Web.$(Configuration).config" />
+    <!--Force build process to use the transformed configuration file from now on.-->
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="Web.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+</Project>

@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02966B54-E3BE-4915-8400-A6B1EE91F8C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LP.EntityModels</RootNamespace>
+    <AssemblyName>LP.EntityModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Int|AnyCPU'">
+    <OutputPath>bin\Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Int|AnyCPU'">
+    <OutputPath>bin\Eylea_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Qa|AnyCPU'">
+    <OutputPath>bin\Eylea_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Int|AnyCPU'">
+    <OutputPath>bin\Xlr_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Qa|AnyCPU'">
+    <OutputPath>bin\Xlr_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Preview|AnyCPU'">
+    <OutputPath>bin\Eylea_Preview\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Live|AnyCPU'">
+    <OutputPath>bin\Eylea_Live\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="askCore_AuthenticationType.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="askCore_Country_CulturePermissions.cs" />
+    <Compile Include="askCore_FieldDefinition.cs" />
+    <Compile Include="askCore_FieldType.cs" />
+    <Compile Include="askCore_PreRegisterRoleAssignments.cs" />
+    <Compile Include="Exam\Answer.cs" />
+    <Compile Include="Exam\AttemptDetail.cs" />
+    <Compile Include="Exam\CertificatesAchieved.cs" />
+    <Compile Include="Exam\CertificatesAchievedExam.cs" />
+    <Compile Include="Exam\Exam.cs" />
+    <Compile Include="Exam\ExamDetail.cs" />
+    <Compile Include="Exam\ExamsQuestion.cs" />
+    <Compile Include="Exam\Question.cs" />
+    <Compile Include="Exam\QuestionCategory.cs" />
+    <Compile Include="Exam\QuestionsOrder.cs" />
+    <Compile Include="Exam\QuestionType.cs" />
+    <Compile Include="Exam\Response.cs" />
+    <Compile Include="Exam\ResponsesAnswer.cs" />
+    <Compile Include="TopicCategory.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="askCore_RoleGroup.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="askCore_SettingsType.cs" />
+    <Compile Include="askCore_SiteSettings.cs" />
+    <Compile Include="askCore_SubscriptionExtraInfo.cs" />
+    <Compile Include="askCore_Subscriptions.cs" />
+    <Compile Include="askCore_UserDetails.cs" />
+    <Compile Include="askCore_UserExtraInfo.cs" />
+    <Compile Include="StoredProcedure\Input\ltl_SearchWithRowCountArguments.cs" />
+    <Compile Include="StoredProcedure\Input\SpGetLastViewedSectionsArguments.cs" />
+    <Compile Include="StoredProcedure\Output\LastSectionsViewed.cs" />
+    <Compile Include="StoredProcedure\Output\SearchWithRowCount.cs" />
+    <Compile Include="Topic.cs" />
+    <Compile Include="TopicCategoryTranslation.cs" />
+    <Compile Include="TopicTranslation.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserRole.cs" />
+    <Compile Include="askCore_UserStatus.cs" />
+    <Compile Include="askQuickCM.cs" />
+    <Compile Include="Exam\Attempt.cs" />
+    <Compile Include="Exam\Certificate.cs" />
+    <Compile Include="Exam\TrainingsExam.cs" />
+    <Compile Include="ImageModulePostBlock.cs" />
+    <Compile Include="ImageModulePostBlockPopup.cs" />
+    <Compile Include="ImageModulePostPopoutLayoutType.cs" />
+    <Compile Include="ImagingModulePost.cs" />
+    <Compile Include="AdminHistory.cs" />
+    <Compile Include="AutomaticRoleAssignment.cs" />
+    <Compile Include="ltl_AutomaticRoleAssignmentType.cs" />
+    <Compile Include="ClientApp.cs" />
+    <Compile Include="ltl_ClientAppFeatureAttachmentVisiblity.cs" />
+    <Compile Include="ltl_ClientAppPostVisiblity.cs" />
+    <Compile Include="ltl_CultureRole_CultureString.cs" />
+    <Compile Include="ltl_DraftStatusType.cs" />
+    <Compile Include="ltl_DynamicRoles.cs" />
+    <Compile Include="ltl_EmailTemplate.cs" />
+    <Compile Include="ltl_EmbeddedContent.cs" />
+    <Compile Include="ltl_ExtendedResults.cs" />
+    <Compile Include="ltl_Favourites.cs" />
+    <Compile Include="ltl_FeatureAttachment.cs" />
+    <Compile Include="ltl_FeatureAttachmentCategory.cs" />
+    <Compile Include="ltl_FeatureAttachmentTranslation.cs" />
+    <Compile Include="ltl_FeatureAttachmentType.cs" />
+    <Compile Include="ltl_FeatureAttachment_CustomField.cs" />
+    <Compile Include="ltl_FeatureAttachment_CustomFieldDefinition.cs" />
+    <Compile Include="ltl_FeatureAttachment_CustomFieldType.cs" />
+    <Compile Include="ltl_GroupCategory.cs" />
+    <Compile Include="ltl_GroupCertificates.cs" />
+    <Compile Include="GroupPermission.cs" />
+    <Compile Include="Group.cs" />
+    <Compile Include="ltl_GroupType.cs" />
+    <Compile Include="ltl_GroupTypeTranslations.cs" />
+    <Compile Include="ltl_History.cs" />
+    <Compile Include="ltl_HistoryType.cs" />
+    <Compile Include="ltl_HoverOver.cs" />
+    <Compile Include="ltl_HoverOverAudio.cs" />
+    <Compile Include="ltl_HoverOverAudioCulture.cs" />
+    <Compile Include="ltl_HoverOverSettings.cs" />
+    <Compile Include="ltl_ItemDescription.cs" />
+    <Compile Include="ltl_Link.cs" />
+    <Compile Include="ltl_Link_Role.cs" />
+    <Compile Include="ltl_MandatoryRolePerCulture.cs" />
+    <Compile Include="ltl_Navigation.cs" />
+    <Compile Include="ltl_NavigationCulture.cs" />
+    <Compile Include="ltl_NavigationRole.cs" />
+    <Compile Include="News.cs" />
+    <Compile Include="ltl_NewsCategory.cs" />
+    <Compile Include="ltl_OldIndication_EmploymentRole.cs" />
+    <Compile Include="ltl_Posts.cs" />
+    <Compile Include="ltl_PostTranslationDrafts.cs" />
+    <Compile Include="ltl_PostTranslationMapping.cs" />
+    <Compile Include="ltl_PostTranslations.cs" />
+    <Compile Include="ltl_ScormPackage.cs" />
+    <Compile Include="ltl_SectionPermissions.cs" />
+    <Compile Include="ltl_Sections.cs" />
+    <Compile Include="ltl_SectionTranslationDrafts.cs" />
+    <Compile Include="ltl_SectionTranslationMapping.cs" />
+    <Compile Include="ltl_SectionTranslationNotifications.cs" />
+    <Compile Include="ltl_SectionTranslations.cs" />
+    <Compile Include="ltl_SettingsType.cs" />
+    <Compile Include="ltl_SiteSettings.cs" />
+    <Compile Include="ltl_SSOLog.cs" />
+    <Compile Include="ltl_StatusBank.cs" />
+    <Compile Include="ltl_StickyNotes.cs" />
+    <Compile Include="ltl_SupportedCulture.cs" />
+    <Compile Include="TrainingArea.cs" />
+    <Compile Include="ltl_TrainingAreaPermissions.cs" />
+    <Compile Include="ltl_TranslationHistory.cs" />
+    <Compile Include="ltl_TranslationHistoryData.cs" />
+    <Compile Include="ltl_TranslationNotificationActions.cs" />
+    <Compile Include="ltl_UserGroupActivity.cs" />
+    <Compile Include="ltl_UserHistory.cs" />
+    <Compile Include="ltl_UserPostViewed.cs" />
+    <Compile Include="ltl_UsersFavouriteGroup.cs" />
+    <Compile Include="ltl_UserSurvey.cs" />
+    <Compile Include="ltl_UserSurveyOptions.cs" />
+    <Compile Include="ltl_VersionHistory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="quiz_AnswerBank.cs" />
+    <Compile Include="quiz_Attempt.cs" />
+    <Compile Include="quiz_Category.cs" />
+    <Compile Include="quiz_CBMValue.cs" />
+    <Compile Include="quiz_CommentBank.cs" />
+    <Compile Include="quiz_ExamBank.cs" />
+    <Compile Include="quiz_ExamQuestions.cs" />
+    <Compile Include="quiz_OnlyBCCResultsForTheseEmails.cs" />
+    <Compile Include="quiz_PostExams.cs" />
+    <Compile Include="quiz_QuestionBank.cs" />
+    <Compile Include="quiz_QuestionOrder.cs" />
+    <Compile Include="quiz_QuestionType.cs" />
+    <Compile Include="quiz_QuizSettings.cs" />
+    <Compile Include="quiz_ResponseBank.cs" />
+    <Compile Include="quiz_RolesBank.cs" />
+    <Compile Include="quiz_SettingsType.cs" />
+    <Compile Include="quiz_StatusBank.cs" />
+    <Compile Include="quiz_StudentTrainer.cs" />
+    <Compile Include="ResourceLocalization.cs" />
+    <Compile Include="VAConversionTool.cs" />
+    <Compile Include="Views\GroupTypesWithUsers.cs" />
+    <Compile Include="Views\TrainersWithStudentsCountries.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LP.ServiceHost.DataContracts\LP.ServiceHost.DataContracts.csproj">
+      <Project>{0BAA830C-582E-4541-8432-455364C18CB9}</Project>
+      <Name>LP.ServiceHost.DataContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

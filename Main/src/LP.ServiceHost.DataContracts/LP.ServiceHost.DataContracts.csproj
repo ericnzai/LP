@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0BAA830C-582E-4541-8432-455364C18CB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LP.ServiceHost.DataContracts</RootNamespace>
+    <AssemblyName>LP.ServiceHost.DataContracts</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Int|AnyCPU'">
+    <OutputPath>bin\Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Int|AnyCPU'">
+    <OutputPath>bin\Eylea_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Qa|AnyCPU'">
+    <OutputPath>bin\Eylea_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Int|AnyCPU'">
+    <OutputPath>bin\Xlr_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Qa|AnyCPU'">
+    <OutputPath>bin\Xlr_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Preview|AnyCPU'">
+    <OutputPath>bin\Eylea_Preview\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Live|AnyCPU'">
+    <OutputPath>bin\Eylea_Live\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <Folder Include="Common\Authentication\" />
+    <Folder Include="Enums\Authentication\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Content\CategoryTopic.cs" />
+    <Compile Include="Common\Content\DataPdf.cs" />
+    <Compile Include="Common\Content\DropdownItemContract.cs" />
+    <Compile Include="Common\Content\FeatureAttachmentPostInformation.cs" />
+    <Compile Include="Common\Content\FeatureAttachment\FeatureAttachmentItemContract.cs" />
+    <Compile Include="Common\Content\FullTextSearchFreeTextTable.cs" />
+    <Compile Include="Common\Content\GlossaryItem.cs" />
+    <Compile Include="Common\Content\Group.cs" />
+    <Compile Include="Common\Content\GroupType.cs" />
+    <Compile Include="Common\Content\LanguageContract.cs" />
+    <Compile Include="Common\Content\LatestNewsItem.cs" />
+    <Compile Include="Common\Content\SearchItem.cs" />
+    <Compile Include="Common\Content\Topic.cs" />
+    <Compile Include="Common\Content\TopicCategory.cs" />
+    <Compile Include="Common\Content\TopicTranslationContract.cs" />
+    <Compile Include="Common\Content\VAConversionToolContract.cs" />
+    <Compile Include="Common\Exams\CertificateAchievedInformation.cs" />
+    <Compile Include="Common\Exams\Dashboards\CountryPerformanceContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\CountryPerformanceCultureContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\CountryPerformanceGroupContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\CountryPerformanceSingleContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\Country\CountryActivitiesContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\Country\CountryActivityContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\DashboardBarChartContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\PerformanceGroupTypeContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\GroupActivityContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\TraineeActivityLanguageContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\Trainer\TrainerActivityContract.cs" />
+    <Compile Include="Common\Exams\Dashboards\Trainer\TrainerActivitiesContract.cs" />
+    <Compile Include="Common\Exams\GroupPercentageComplete.cs" />
+    <Compile Include="Common\Exams\GroupProgressContract.cs" />
+    <Compile Include="Common\Exams\ModuleComplete.cs" />
+    <Compile Include="Common\Exams\PercentageItem.cs" />
+    <Compile Include="Common\Exams\TrainingAreaCompletion.cs" />
+    <Compile Include="Common\Exams\Role.cs" />
+    <Compile Include="Common\Translation\TranslatedItem.cs" />
+    <Compile Include="Enums\AccessType.cs" />
+    <Compile Include="Enums\AttachmentType.cs" />
+    <Compile Include="Enums\DashboardType.cs" />
+    <Compile Include="Enums\HttpResponseStatus.cs" />
+    <Compile Include="Enums\RoleGroup.cs" />
+    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Enums\TrainingStatus.cs" />
+    <Compile Include="Enums\ActivitiesStatus.cs" />
+    <Compile Include="Enums\UserStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\Authentication\LoginRequestContract.cs" />
+    <Compile Include="Request\BaseRequestContract.cs" />
+    <Compile Include="Request\Content\GlossaryFilteredPdfRequestContract.cs" />
+    <Compile Include="Request\Content\GlossaryPdfRequestContract.cs" />
+    <Compile Include="Request\Content\PostTopicPostRequestContract.cs" />
+    <Compile Include="Request\Content\PostTopicRequestContract.cs" />
+    <Compile Include="Request\Content\PostTopicsRequestContract.cs" />
+    <Compile Include="Request\Content\SearchRequestContract.cs" />
+    <Compile Include="Request\Content\TopicCategoryDeleteRequestContract.cs" />
+    <Compile Include="Request\Content\TopicCategoryRequestContract.cs" />
+    <Compile Include="Request\Content\TopicCategoryTranslationRequestContract.cs" />
+    <Compile Include="Request\Content\TopicCategoryTranslationUpdateRequestContract.cs" />
+    <Compile Include="Request\Content\TopicCategoryUpdateRequestContract.cs" />
+    <Compile Include="Request\Content\TopicDeleteRequestContract.cs" />
+    <Compile Include="Request\Content\TopicRequestContract.cs" />
+    <Compile Include="Request\Content\TopicTranslationRequestContract.cs" />
+    <Compile Include="Request\Content\TopicTranslationUpdateRequestContract.cs" />
+    <Compile Include="Request\Content\TopicUpdateRequestContract.cs" />
+    <Compile Include="Request\Content\VAConversionToolDownloadPdfRequestContract.cs" />
+    <Compile Include="Request\Content\VAConversionToolPathRequestContract.cs" />
+    <Compile Include="Request\Content\VAConversionToolRequestContract.cs" />
+    <Compile Include="Request\Content\VAConversionToolTranslationRequestContract.cs" />
+    <Compile Include="Request\Content\VAConversionToolTranslationSaveRequestContract.cs" />
+    <Compile Include="Request\Translation\TranslationRequest.cs" />
+    <Compile Include="Request\Translation\TranslationRequestContract.cs" />
+    <Compile Include="Response\Authentication\LoginResponseContract.cs" />
+    <Compile Include="Response\Authentication\OauthTokenResponseContract.cs" />
+    <Compile Include="Response\Authentication\UserInformationResponseContract.cs" />
+    <Compile Include="Response\Content\CompleteCultureMenuResponseContract.cs" />
+    <Compile Include="Response\Content\DashboardFilterDropdownResponseContract.cs" />
+    <Compile Include="Response\Content\FeatureAttachmentModalResponseContract.cs" />
+    <Compile Include="Response\Content\FeatureAttachmentVideoModalResponseContract.cs" />
+    <Compile Include="Response\Content\FeatureAttachment\FeatureAttachmentPageResponseContract.cs" />
+    <Compile Include="Response\Content\GlossaryAudioResponseContract.cs" />
+    <Compile Include="Response\Content\GlossaryPDFResponseContract.cs" />
+    <Compile Include="Response\Content\GroupItemResponseContract.cs" />
+    <Compile Include="Response\Content\LatestNewsResponseContract.cs" />
+    <Compile Include="Response\Content\PostResponseContract.cs" />
+    <Compile Include="Response\Content\PostTopicResponseContract.cs" />
+    <Compile Include="Response\Content\SearchItemsReponseContract.cs" />
+    <Compile Include="Response\Content\TopicCategoriesResponseContract.cs" />
+    <Compile Include="Response\Content\TopicCategoryDeleteResponseContract.cs" />
+    <Compile Include="Response\Content\TopicCategoryResponseContract.cs" />
+    <Compile Include="Common\Content\TopicCategoryTranslationContract.cs" />
+    <Compile Include="Response\Content\TopicCategoryTranslationFormResponseContract.cs" />
+    <Compile Include="Response\Content\CompleteTopicCategoryTranslationResponseContract.cs" />
+    <Compile Include="Response\Content\TopicCategoryTranslationResponseContract.cs" />
+    <Compile Include="Response\Content\TopicCategoryTranslationUpdateResponseContract.cs" />
+    <Compile Include="Response\Content\TopicCategoryUpdateResponseContract.cs" />
+    <Compile Include="Response\Content\TopicResponseContract.cs" />
+    <Compile Include="Response\Content\TopicsResponseContract.cs" />
+    <Compile Include="Response\Content\TopicTranslationFormResponseContract.cs" />
+    <Compile Include="Response\Content\CompleteTopicTranslationResponseContract.cs" />
+    <Compile Include="Response\Content\TopicTranslationResponseContract.cs" />
+    <Compile Include="Response\Content\TopicTranslationUpdateResponseContract.cs" />
+    <Compile Include="Response\Content\TopicUpdateResponseContract.cs" />
+    <Compile Include="Response\Content\VAConversionToolDetailsResponseContract.cs" />
+    <Compile Include="Response\Content\VAConversionToolDownloadPdfResponseContract.cs" />
+    <Compile Include="Response\Content\VAConversionToolResponseContract.cs" />
+    <Compile Include="Response\Content\VAConversionToolTranslationDetailsResponseContract.cs" />
+    <Compile Include="Response\Exams\GroupsPercentageCompleteResponseContract.cs" />
+    <Compile Include="Response\Exams\GroupTypeHeadersResponseContract.cs" />
+    <Compile Include="Response\Exams\OverviewCountryProgressResponseContract.cs" />
+    <Compile Include="Response\Exams\OverviewGroupTypeProgressResponseContract.cs" />
+    <Compile Include="Response\Exams\PerformanceGroupTypeViewModel.cs" />
+    <Compile Include="Response\Exams\TrainingAreaProgressResponseContract.cs" />
+    <Compile Include="Response\Exams\TrainingAreasCompleteResponseContract.cs" />
+    <Compile Include="Response\Content\GlossaryItemsResponseContract.cs" />
+    <Compile Include="Response\Content\GroupResponseContract.cs" />
+    <Compile Include="Response\Content\TopicDeleteResponseContract.cs" />
+    <Compile Include="Response\Exams\ReportRolesResponseContract.cs" />
+    <Compile Include="Response\Translation\TranslationResponseContract.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="LP.ServiceHost.DataContracts">
+      <HintPath>..\LP.Api.Shared\bin\Debug\LP.ServiceHost.DataContracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

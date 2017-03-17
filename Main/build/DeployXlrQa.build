@@ -1,0 +1,16 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<PropertyGroup>
+		<RemoteWWWPath>c$\_wwwroot\Bayer_XLR_Api\qa\wwwroot</RemoteWWWPath>		
+		<RemoteServerIp>\\212.67.214.30</RemoteServerIp>
+		<RemoteUser>askdev\askadmin</RemoteUser>
+		<RemotePassword>P!nkparr0t</RemotePassword>
+	</PropertyGroup>
+
+	
+	<Target Name="DeployQA">
+
+		<CallTarget Targets="RemoteCopyOutput"/>
+	
+	</Target>
+</Project>

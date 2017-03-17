@@ -1,0 +1,71 @@
+﻿@using System.Configuration
+@model LP.Model.ViewModels.VAConversionToolTranslation.VAConversionToolTranslationViewModel
+
+@{
+    Html.RenderPartial("~/Areas/Eylea/Views/Shared/Partial/_LanguageSelector.cshtml", Model.LanguageSelectorViewModel);
+}
+
+<div id="conversionToolTranslation">
+    
+    @{
+        Html.RenderPartial("~/Areas/Eylea/Views/VAConversionToolTranslation/Partial/_ConversionToolNewTranslationWithHistory.cshtml", Model);
+    }
+          
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#conversionToolTranslation").hide();
+        $("#btnLanguageSelectorBack").hide();
+
+        $('a.available-languages__link').click(function (e) {
+            e.preventDefault();
+            var culture = $(e.target).attr('value');
+            $("#conversionToolTranslation").show();
+            $("#btnLanguageSelectorBack").show();
+            $("#languageSelectorConversionTool").hide();
+
+            // ajax call to return the new view based on the selected language
+            var url = '@ConfigurationManager.AppSettings["BaseUrl"]' + '/Eylea/VAConversionToolTranslation/GetConversionToolNewTranslationWithHistoryView';
+                    $.ajax({
+                        url: url,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        type: 'POST',
+                        contentType: "application/html",
+                        dataType: "html",
+                        data: "{'culture':'" + culture + "'}",
+                        success: function (data) {
+                            if (data) {
+                                $('#conversionToolTranslation').html(data);
+                            }
+                            
+                        },error: function(e) {
+                            //alert(e.responseText);
+                        }
+                    });
+                });
+
+                $("#txtFileUploadTranslation").kendoUpload(
+                   {
+                       multiple: false,
+                       async: {
+                           saveUrl: "",
+                           autoUpload: true
+                       }
+                   }
+               );
+
+                var panelBarHistory = $("#panelbarConversionToolTranslationHistory").kendoPanelBar().data("kendoPanelBar");
+                var panelBarNotificationHistory = $("#panelbarConversionToolTransalationNotification").kendoPanelBar().data("kendoPanelBar");
+
+                $("#tabConversionToolTranslationHistory").kendoTabStrip({
+                    animation: {
+                        open: {
+                            effects: "fadeIn"
+                        }
+                    }
+                });
+            });
+</script>

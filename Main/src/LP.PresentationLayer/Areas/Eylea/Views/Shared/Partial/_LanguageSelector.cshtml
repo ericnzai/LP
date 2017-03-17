@@ -1,0 +1,13 @@
+﻿@model LP.Model.ViewModels.Shared.LanguageSelectorViewModel
+
+
+
+<div class="available-languages-wrapper" id="languageSelectorConversionTool">
+    <span class="available-languages__label">Available translations:</span>
+    <ul id="ulAvailableTranslations" class="available-languages is-list">
+        @foreach (var language in Model.Languages)
+        {
+            Html.RenderPartial("~/Areas/Eylea/Views/Shared/Partial/_Language.cshtml", language);
+        }
+    </ul>
+</div>

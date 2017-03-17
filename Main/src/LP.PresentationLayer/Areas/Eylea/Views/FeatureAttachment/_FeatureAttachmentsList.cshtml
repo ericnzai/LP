@@ -1,0 +1,26 @@
+﻿
+@using Newtonsoft.Json
+@model LP.Model.ViewModels.FeatureAttachments.FeatureAttachmentPageViewModel
+
+<div id="listViewFeatureAttachments"></div>
+<div id="pagerFeatureAttachments" class="k-pager-wrap"></div>
+
+<script>
+        //var populateFeatureAttachments = function (featureAttachments) {
+        //    var dataSource = new kendo.data.DataSource({
+        //        data: featureAttachments,
+        //        pageSize: 20
+        //    });
+
+        //    $("#pagerFeatureAttachments").kendoPager({
+        //        dataSource: dataSource
+        //    });
+
+        //    $("#listViewFeatureAttachments").kendoListView({
+        //        dataSource: dataSource,
+        //        template: kendo.template("<h3>#:FeatureAttachmentId#</h3>")
+        //    });
+        //};
+
+        populateFeatureAttachments('@JsonConvert.SerializeObject(Model.FeatureAttachments)');
+</script>

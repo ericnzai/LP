@@ -1,0 +1,21 @@
+﻿@using iTextSharp.text.pdf.qrcode
+@using LP.ServiceHost.DataContracts.Enums
+@model LP.Model.ViewModels.Dashboards.GroupActivityViewModel
+
+
+@if (Model.ActivityStatus == ActivitiesStatus.NotStarted || Model.ActivityStatus == ActivitiesStatus.NoExams)
+{
+    <span><span class='special'>--</span></span>
+}
+else if (Model.ActivityStatus == ActivitiesStatus.PagesViewed)
+{
+    <span><span class='ico book imgSpan' title='Started'></span></span>
+}
+else if (Model.ActivityStatus == ActivitiesStatus.SelfAssessmentsInProgress)
+{
+    <span><span class='ico self_ass-started imgSpan' title='Self-assessment in progress'></span></span>
+}
+else if (Model.ActivityStatus == ActivitiesStatus.Certified)
+{
+    <span><span class='ico self_ass-passed imgSpan' title='Certified'></span></span>
+}

@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1745930F-69F3-4E90-944D-1FB86E1F0D53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LP.Model</RootNamespace>
+    <AssemblyName>LP.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Int|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Int\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Int|AnyCPU'">
+    <OutputPath>bin\Eylea_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Qa|AnyCPU'">
+    <OutputPath>bin\Eylea_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Int|AnyCPU'">
+    <OutputPath>bin\Xlr_Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Xlr_Qa|AnyCPU'">
+    <OutputPath>bin\Xlr_Qa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Preview|AnyCPU'">
+    <OutputPath>bin\Eylea_Preview\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Eylea_Live|AnyCPU'">
+    <OutputPath>bin\Eylea_Live\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentication\AccessTokenModel.cs" />
+    <Compile Include="Authentication\DecryptedUser.cs" />
+    <Compile Include="Authentication\UserDetails.cs" />
+    <Compile Include="Dto\FeatureAttachmentDto.cs" />
+    <Compile Include="Dto\FeatureAttachmentTranslationDto.cs" />
+    <Compile Include="Exams\UserGroup.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\LinqExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Mappers\DashboardFilterDropdownResponseContractEx.cs" />
+    <Compile Include="Mappers\FeatureAttachmentDtoEx.cs" />
+    <Compile Include="Mappers\GroupActivityContractEx.cs" />
+    <Compile Include="Mappers\GroupTypeHeadersEx.cs" />
+    <Compile Include="Mappers\OverviewCountryProgressResponseContractEx.cs" />
+    <Compile Include="Mappers\TraineeActivityLanguageContractEx.cs" />
+    <Compile Include="Mappers\CountryActivitiesContractEx.cs" />
+    <Compile Include="Mappers\CountryActivityContractEx.cs" />
+    <Compile Include="Mappers\TrainerActivityContractEx.cs" />
+    <Compile Include="Mappers\TrainerActivitiesContractEx.cs" />
+    <Compile Include="Mappers\CountryPerformanceCultureContractEx.cs" />
+    <Compile Include="Mappers\CountryPerformanceGroupContractEx.cs" />
+    <Compile Include="Mappers\DashboardBarChartContractEx.cs" />
+    <Compile Include="Mappers\FeatureAttachmentEx.cs" />
+    <Compile Include="Mappers\FeatureAttachmentPageResponseContractEx.cs" />
+    <Compile Include="Mappers\FeatureAttachmentPostInformationEx.cs" />
+    <Compile Include="Mappers\FeatureAttachmentVideoModalResponseContractEx.cs" />
+    <Compile Include="Mappers\FeatureAttachmentModalResponseContractEx.cs" />
+    <Compile Include="Mappers\GroupProgressContractEx.cs" />
+    <Compile Include="Mappers\GroupTypeEx.cs" />
+    <Compile Include="Mappers\OverviewGroupProgressResponseContractEx.cs" />
+    <Compile Include="Mappers\PerformanceGroupTypeContractEx.cs" />
+    <Compile Include="Mappers\ResourceLocalizationEx.cs" />
+    <Compile Include="Mappers\TopicCategoryTranslationContractEx.cs" />
+    <Compile Include="Mappers\TopicTranslationContractEx.cs" />
+    <Compile Include="Mappers\TrainingAreaProgressResponseContractEx.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Common\ChapterInfoViewModel.cs" />
+    <Compile Include="ViewModels\Common\CultureMenuViewModel.cs" />
+    <Compile Include="ViewModels\Common\GroupInfoViewModel.cs" />
+    <Compile Include="ViewModels\Common\GroupMainInfoViewModel.cs" />
+    <Compile Include="ViewModels\Common\TrainingAreaViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\CountryTrainerViewReportLinkViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\CountryTrainerActivitiesLegendViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Country\CountryActivityViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\TraineeActivityLanguageViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\CountryPerformanceCultureViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\PerformanceGroupTypeViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\IndividualCountryPerformanceViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\CountryPerformanceViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Country\CountryDropdownListsViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\GroupActivityViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Country\CountryActivitiesViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\DropdownListsViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Global\GlobalDropdownListsViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\CountryPerformanceGroupViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Regional\RegionalDropdownListsViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\CertificationOverviewViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\DashboardBarChartLegendViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\DashboardBarChartViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Student\GroupProgressViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Student\ModuleCompletedAreaViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Student\TrainingAreaProgressViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Trainer\TrainerActivityViewModel.cs" />
+    <Compile Include="ViewModels\Dashboards\Trainer\TrainerActivitiesViewModel.cs" />
+    <Compile Include="ViewModels\FeatureAttachments\FeatureAttachmentPageViewModel.cs" />
+    <Compile Include="ViewModels\FeatureAttachments\FeatureAttachmentPostInformationViewModel.cs" />
+    <Compile Include="ViewModels\FeatureAttachments\FeatureAttachmentVideoModalViewModel.cs" />
+    <Compile Include="ViewModels\FeatureAttachments\FeatureAttachmentModalViewModel.cs" />
+    <Compile Include="ViewModels\FeatureAttachments\FeatureAttachmentViewModel.cs" />
+    <Compile Include="ViewModels\Glossary\GlossaryItemsViewModel.cs" />
+    <Compile Include="ViewModels\Group\GroupTypeViewModel.cs" />
+    <Compile Include="ViewModels\Group\GroupsViewModel.cs" />
+    <Compile Include="ViewModels\News\NewsItemViewModel.cs" />
+    <Compile Include="ViewModels\News\NewsViewModel.cs" />
+    <Compile Include="ViewModels\Reports\ReportsRolesViewModel.cs" />
+    <Compile Include="ViewModels\Search\SearchItemsViewModel.cs" />
+    <Compile Include="ViewModels\Shared\DropdownItemViewModel.cs" />
+    <Compile Include="ViewModels\Shared\DropdownViewModel.cs" />
+    <Compile Include="ViewModels\Shared\HistoryViewModel.cs" />
+    <Compile Include="ViewModels\Shared\LanguageSelectorViewModel.cs" />
+    <Compile Include="ViewModels\Shared\LanguageViewModel.cs" />
+    <Compile Include="ViewModels\Shared\PieChartViewModel.cs" />
+    <Compile Include="ViewModels\Shared\UserInformationViewModel.cs" />
+    <Compile Include="ViewModels\TopicTranslation\CompleteTopicCategoryTranslationViewModel.cs" />
+    <Compile Include="ViewModels\TopicTranslation\TopicCategoryTranslationFormViewModel.cs" />
+    <Compile Include="ViewModels\TopicTranslation\TopicCategoryTranslationViewModel.cs" />
+    <Compile Include="ViewModels\TopicTranslation\CompleteTopicTranslationViewModel.cs" />
+    <Compile Include="ViewModels\TopicTranslation\TopicTranslationFormViewModel.cs" />
+    <Compile Include="ViewModels\TopicTranslation\TopicTranslationViewModel.cs" />
+    <Compile Include="ViewModels\Topic\CategoryTopicsViewModel.cs" />
+    <Compile Include="ViewModels\Topic\TopicCategoriesViewModel.cs" />
+    <Compile Include="ViewModels\Topic\TopicCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Topic\TopicDropdownWithCheckboxesViewModel.cs" />
+    <Compile Include="ViewModels\Topic\TopicsViewModel.cs" />
+    <Compile Include="ViewModels\Topic\TopicViewModel.cs" />
+    <Compile Include="ViewModels\VAConversionToolTranslation\VAConversionToolTranslationNewViewModel.cs" />
+    <Compile Include="ViewModels\VAConversionToolTranslation\VAConversionToolTranslationOriginalViewModel.cs" />
+    <Compile Include="ViewModels\VAConversionToolTranslation\VAConversionToolTranslationViewModel.cs" />
+    <Compile Include="ViewModels\VAConversionTool\ConversionToolHistoryViewModel.cs" />
+    <Compile Include="ViewModels\VAConversionTool\VAConversionToolViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LP.EntityModels\LP.EntityModels.csproj">
+      <Project>{02966B54-E3BE-4915-8400-A6B1EE91F8C5}</Project>
+      <Name>LP.EntityModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LP.ServiceHost.DataContracts\LP.ServiceHost.DataContracts.csproj">
+      <Project>{0BAA830C-582E-4541-8432-455364C18CB9}</Project>
+      <Name>LP.ServiceHost.DataContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

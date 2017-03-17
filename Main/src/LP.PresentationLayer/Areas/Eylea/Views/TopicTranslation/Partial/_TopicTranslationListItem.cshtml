@@ -1,0 +1,45 @@
+﻿@model LP.Model.ViewModels.TopicTranslation.TopicTranslationViewModel
+           
+<div class="pure-g chapter-translation-summary__sublist-item is-table">
+    <div class="chapter-translation-summary__status is-table-cell--align-middle pure-u-md-1-24 pure-u-1">
+        @if (Model.IsTranslated)
+        {
+            <div class="ico translation-ico done"></div>
+        }
+        else
+        {
+            <div class="ico translation-ico"></div>
+        }
+    </div>
+
+    <div class="chapter-translation-summary__actions is-table-cell--align-middle pure-u-md-4-24 pure-u-1">
+        <ul class="btn-group btn-group--vertical is-fixed-width">
+            <li class="btn-group__item">
+                @if (Model.IsTranslated)
+                {
+                    <a href="TopicTranslationForm.aspx?t=@Model.TopicId" class="btn btn--update chapter-translation-summary__btn" title="Topic Translation">
+                        Edit
+                    </a>
+
+                }
+                else
+                {
+                    <a href="TopicTranslationForm.aspx?t=@Model.TopicId" class="btn btn--update chapter-translation-summary__btn btn--alt" title="Topic Translation">
+                        Start Translation
+                    </a>
+                }     
+            </li>
+        </ul>
+    </div>
+    <div class="chapter-translation-summary__details is-table-cell--align-middle pure-u-md-12-24 pure-u-1">
+        
+        <p>
+            <span class="ico ico-type-page chapter-translation-summary__type-icon">
+            </span>
+            <span class="nottranslated">@Model.TopicName</span>
+        </p>
+    </div>
+    <div class="chapter-translation-summary__log is-table-cell--align-middle pure-u-md-7-24 pure-u-1">
+        Last updated on @Model.LastUpdated by @Model.UpdatedByUserName
+    </div>
+</div>

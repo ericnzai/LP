@@ -1,0 +1,19 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath64)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks" Condition="MSBuildExtensionsPath64!='' And  Exists('$(MSBuildExtensionsPath64)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks')"/>
+
+  <Target Name="CreateZip">
+
+    <ItemGroup>
+      <ZipFiles Include="$(WebProjectOutputDir)\**\*.*" >
+        <Group>$(Configuration)</Group>
+      </ZipFiles>
+
+    </ItemGroup>
+
+    <MSBuild.ExtensionPack.Compression.Zip
+                            TaskAction="Create"
+                            CompressFiles="@(ZipFiles)"
+                            ZipFileName="$(WebProjectOutputDir).%(ZipFiles.Group).$(Today).zip"
+                            RemoveRoot="$(WebProjectOutputDir)"/>
+  </Target>
+</Project>

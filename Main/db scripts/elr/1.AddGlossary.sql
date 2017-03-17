@@ -1,0 +1,196 @@
+GO
+
+INSERT INTO [dbo].[Resource_Localization]
+           ([ResourceId]
+           ,[Value]
+           ,[LocaleId]
+           ,[ResourceSet]
+           ,[Type]
+           ,[BinFile]
+           ,[TextFile]
+           ,[Filename]
+           ,[Comment]
+           ,[DateCreated]
+           ,[DateModified]
+           ,[UserID]
+           ,[PageType]
+           ,[RequiredContentPlaceholders]
+           ,[PreviewUrl]
+           ,[IsCultureDependent]
+           ,[PreviewUrlDisplay])
+     VALUES
+           ('ltGlossary.Text'
+           ,'Glossary'
+           ,''
+           ,'Master/Master.aspx'
+           ,''
+           ,null
+           ,null
+           ,''
+           ,''
+           ,getDate()
+           ,getDate()
+           ,null
+           ,'Admin'
+           ,null
+           ,null
+           ,1
+           ,null)
+GO
+
+GO
+
+INSERT INTO [dbo].[Resource_Localization]
+           ([ResourceId]
+           ,[Value]
+           ,[LocaleId]
+           ,[ResourceSet]
+           ,[Type]
+           ,[BinFile]
+           ,[TextFile]
+           ,[Filename]
+           ,[Comment]
+           ,[DateCreated]
+           ,[DateModified]
+           ,[UserID]
+           ,[PageType]
+           ,[RequiredContentPlaceholders]
+           ,[PreviewUrl]
+           ,[IsCultureDependent]
+           ,[PreviewUrlDisplay])
+     VALUES
+           ('msgSorryNoResults'
+           ,'Sorry, there are no results for your search'
+           ,''
+           ,'Master/Master.aspx'
+           ,''
+           ,null
+           ,null
+           ,''
+           ,''
+           ,getDate()
+           ,getDate()
+           ,null
+           ,'Admin'
+           ,null
+           ,null
+           ,1
+           ,null)
+GO
+
+INSERT INTO [dbo].[Resource_Localization]
+           ([ResourceId]
+           ,[Value]
+           ,[LocaleId]
+           ,[ResourceSet]
+           ,[Type]
+           ,[BinFile]
+           ,[TextFile]
+           ,[Filename]
+           ,[Comment]
+           ,[DateCreated]
+           ,[DateModified]
+           ,[UserID]
+           ,[PageType]
+           ,[RequiredContentPlaceholders]
+           ,[PreviewUrl]
+           ,[IsCultureDependent]
+           ,[PreviewUrlDisplay])
+     VALUES
+           ('msgFollowingFiltersSelected'
+           ,'The following filters were selected: '
+           ,''
+           ,'Master/Master.aspx'
+           ,''
+           ,null
+           ,null
+           ,''
+           ,''
+           ,getDate()
+           ,getDate()
+           ,null
+           ,'Admin'
+           ,null
+           ,null
+           ,1
+           ,null)
+GO
+
+INSERT INTO [dbo].[Resource_Localization]
+           ([ResourceId]
+           ,[Value]
+           ,[LocaleId]
+           ,[ResourceSet]
+           ,[Type]
+           ,[BinFile]
+           ,[TextFile]
+           ,[Filename]
+           ,[Comment]
+           ,[DateCreated]
+           ,[DateModified]
+           ,[UserID]
+           ,[PageType]
+           ,[RequiredContentPlaceholders]
+           ,[PreviewUrl]
+           ,[IsCultureDependent]
+           ,[PreviewUrlDisplay])
+     VALUES
+           ('msgFollowingFiltersSelectedForSearch'
+           ,'for search'
+           ,''
+           ,'Master/Master.aspx'
+           ,''
+           ,null
+           ,null
+           ,''
+           ,''
+           ,getDate()
+           ,getDate()
+           ,null
+           ,'Admin'
+           ,null
+           ,null
+           ,1
+           ,null)
+GO
+
+
+INSERT INTO [dbo].[Resource_Localization]
+           ([ResourceId]
+           ,[Value]
+           ,[LocaleId]
+           ,[ResourceSet]
+           ,[Type]
+           ,[BinFile]
+           ,[TextFile]
+           ,[Filename]
+           ,[Comment]
+           ,[DateCreated]
+           ,[DateModified]
+           ,[UserID]
+           ,[PageType]
+           ,[RequiredContentPlaceholders]
+           ,[PreviewUrl]
+           ,[IsCultureDependent]
+           ,[PreviewUrlDisplay])
+     VALUES
+           ('msgFollowingFiltersSelectedForTrainingModules'
+           ,'for training modules'
+           ,''
+           ,'Master/Master.aspx'
+           ,''
+           ,null
+           ,null
+           ,''
+           ,''
+           ,getDate()
+           ,getDate()
+           ,null
+           ,'Admin'
+           ,null
+           ,null
+           ,1
+           ,null)
+GO
+
+

@@ -1,0 +1,12 @@
+﻿@model LP.Model.ViewModels.Shared.UserInformationViewModel
+<h3 class="box-title">
+    <span class="border-top"></span><span class="border-bottom"></span><span class="border-left">
+    </span><span class="border-right"></span><span class="ico user"></span><span class="textInner">@Model.UserDisplayName</span>
+</h3>
+<div class="box-body">
+    <ul>
+        <li>@Model.FieldOfEmploymenTranslatedItem.TranslatedValue :<br>@Model.FieldOfEmployment</li>
+
+        <li><b>@Model.UserCountry</b></li>
+    </ul>
+</div>

@@ -1,0 +1,14 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+ <Target Name="TransformConfigFiles">
+ <Message Text="Transformation Build" Importance="high"></Message>
+		<ItemGroup>
+			<DeleteAfterBuild Include="$(WebProjectOutputDir)\$(AssemblyName)\Web.*.config" />
+      <DeleteAfterBuild Include="$(WebProjectOutputDir)\$(AssemblyName)\ConnectionStrings.*.config" />
+		</ItemGroup>
+   <TransformXml Source="ConnectionStrings.config" Transform="ConnectionStrings.$(Configuration).config" Destination="$(WebProjectOutputDir)\ConnectionStrings.config" />
+		<TransformXml Source="Web.config" Transform="Web.$(Configuration).config" Destination="$(WebProjectOutputDir)\Web.config" />
+		<Delete Files="@(DeleteAfterBuild)" />
+	<Message Text="Configs transformed." Importance="high"></Message>
+</Target> 
+	</Project>
